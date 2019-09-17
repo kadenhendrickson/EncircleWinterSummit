@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Page View Controller-->
+        <scene sceneID="xd3-xj-vBd">
+            <objects>
+                <viewController storyboardIdentifier="homepage" id="4kt-B4-hZf" customClass="HomePageViewController" customModule="EncircleWinterSummit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LZI-h6-NpF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="595-Oj-yaa">
+                                <rect key="frame" x="10.5" y="279.5" width="393" height="582.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ikK-XJ-axv">
+                                    <size key="itemSize" width="268" height="132"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rQz-GG-lMV">
+                                        <rect key="frame" x="62.5" y="0.0" width="268" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="132"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.086775499359999994" green="0.20784646270000001" blue="0.037100174700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="B3c-zk-12y">
+                                        <rect key="frame" x="62.5" y="142" width="268" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="132"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zgj-dn-uZK">
+                                        <rect key="frame" x="62.5" y="284" width="268" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="132"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO ENCIRCLE SUMMIT 2019" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdI-8w-Agz">
+                                <rect key="frame" x="20.5" y="46" width="373" height="134.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're excited to have you at this years encircle summit (formerly known as IGNITE.) We're excited to see you soon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkl-ms-RSr">
+                                <rect key="frame" x="20.5" y="195.5" width="373" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fdI-8w-Agz" firstAttribute="centerX" secondItem="VOb-JR-CaQ" secondAttribute="centerX" id="DvE-14-FGP"/>
+                            <constraint firstItem="fdI-8w-Agz" firstAttribute="height" secondItem="LZI-h6-NpF" secondAttribute="height" multiplier="0.15" id="HRd-G5-cPn"/>
+                            <constraint firstItem="hkl-ms-RSr" firstAttribute="top" secondItem="fdI-8w-Agz" secondAttribute="bottom" constant="15" id="Ie3-yq-bvl"/>
+                            <constraint firstItem="hkl-ms-RSr" firstAttribute="leading" secondItem="fdI-8w-Agz" secondAttribute="leading" id="KNx-H6-1DL"/>
+                            <constraint firstItem="fdI-8w-Agz" firstAttribute="centerY" secondItem="VOb-JR-CaQ" secondAttribute="centerY" multiplier="0.25" id="SrJ-OA-kWH"/>
+                            <constraint firstItem="VOb-JR-CaQ" firstAttribute="bottom" secondItem="595-Oj-yaa" secondAttribute="bottom" id="bbM-qp-Izz"/>
+                            <constraint firstItem="595-Oj-yaa" firstAttribute="height" secondItem="LZI-h6-NpF" secondAttribute="height" multiplier="0.65" id="cdy-My-Jj6"/>
+                            <constraint firstItem="595-Oj-yaa" firstAttribute="width" secondItem="LZI-h6-NpF" secondAttribute="width" multiplier="0.95" id="fgj-aw-m9W"/>
+                            <constraint firstItem="fdI-8w-Agz" firstAttribute="width" secondItem="LZI-h6-NpF" secondAttribute="width" multiplier="0.9" id="ssh-13-95y"/>
+                            <constraint firstItem="595-Oj-yaa" firstAttribute="centerX" secondItem="VOb-JR-CaQ" secondAttribute="centerX" id="vQc-Hw-eTK"/>
+                            <constraint firstItem="hkl-ms-RSr" firstAttribute="width" secondItem="fdI-8w-Agz" secondAttribute="width" id="wft-pb-aDj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VOb-JR-CaQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="595-Oj-yaa" id="kqe-ab-0MR"/>
+                        <outlet property="descriptionTextField" destination="hkl-ms-RSr" id="vIM-CK-jsa"/>
+                        <outlet property="welcomeTextField" destination="fdI-8w-Agz" id="5g2-Sx-jrh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I05-3a-Qsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="242.41071428571428"/>
+        </scene>
+    </scenes>
+</document>
