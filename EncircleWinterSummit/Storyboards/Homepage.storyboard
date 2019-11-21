@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Page View Controller-->
+        <!--Home-->
         <scene sceneID="xd3-xj-vBd">
             <objects>
                 <viewController storyboardIdentifier="homepage" id="4kt-B4-hZf" customClass="HomePageViewController" customModule="EncircleWinterSummit" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="595-Oj-yaa">
-                                <rect key="frame" x="10.5" y="279.5" width="393" height="582.5"/>
+                                <rect key="frame" x="0.0" y="6.6666666666666856" width="414" height="806.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ikK-XJ-axv">
                                     <size key="itemSize" width="268" height="132"/>
@@ -28,66 +26,139 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rQz-GG-lMV">
-                                        <rect key="frame" x="62.5" y="0.0" width="268" height="132"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="smallDetailCell" id="rQz-GG-lMV" customClass="SmallDetailCollectionViewCell" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="0.0" width="314" height="132"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="132"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="314" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ads-ul-s85">
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="132"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zcn-4F-ILH">
+                                                            <rect key="frame" x="8" y="31.666666666666671" width="251" height="69"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="255" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zI-7W-BhM">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="251" height="36.666666666666664"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMM-B0-B4I">
+                                                                    <rect key="frame" x="0.0" y="48.666666666666657" width="251" height="20.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="zcn-4F-ILH" firstAttribute="centerY" secondItem="ads-ul-s85" secondAttribute="centerY" id="Y6m-99-Bh4"/>
+                                                        <constraint firstItem="zcn-4F-ILH" firstAttribute="centerX" secondItem="ads-ul-s85" secondAttribute="centerX" multiplier="0.85" id="men-qI-kUA"/>
+                                                        <constraint firstItem="zcn-4F-ILH" firstAttribute="width" secondItem="ads-ul-s85" secondAttribute="width" multiplier="0.8" id="z6s-PR-SpX"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S6C-ry-qbs">
+                                                    <rect key="frame" x="280.33333333333331" y="55.666666666666664" width="20.333333333333314" height="20.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="S6C-ry-qbs" secondAttribute="height" multiplier="1:1" id="CA3-na-Y5v"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.086775499359999994" green="0.20784646270000001" blue="0.037100174700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="ads-ul-s85" firstAttribute="width" secondItem="rQz-GG-lMV" secondAttribute="width" id="5x3-FI-oSP"/>
+                                            <constraint firstItem="S6C-ry-qbs" firstAttribute="width" secondItem="rQz-GG-lMV" secondAttribute="width" multiplier="0.065" id="ISU-Y2-3Km"/>
+                                            <constraint firstItem="ads-ul-s85" firstAttribute="height" secondItem="rQz-GG-lMV" secondAttribute="height" id="TlH-SX-od9"/>
+                                            <constraint firstItem="S6C-ry-qbs" firstAttribute="centerY" secondItem="rQz-GG-lMV" secondAttribute="centerY" id="d7z-TR-hfa"/>
+                                            <constraint firstItem="S6C-ry-qbs" firstAttribute="centerX" secondItem="rQz-GG-lMV" secondAttribute="centerX" multiplier="1.85" id="kHK-Nt-dmy"/>
+                                            <constraint firstItem="ads-ul-s85" firstAttribute="centerX" secondItem="rQz-GG-lMV" secondAttribute="centerX" id="qhn-bp-csg"/>
+                                            <constraint firstItem="ads-ul-s85" firstAttribute="centerY" secondItem="rQz-GG-lMV" secondAttribute="centerY" id="sC9-Yh-8sl"/>
+                                        </constraints>
+                                        <size key="customSize" width="314" height="132"/>
+                                        <connections>
+                                            <outlet property="arrowButton" destination="S6C-ry-qbs" id="XeQ-CH-MDc"/>
+                                            <outlet property="descriptionLabel" destination="lMM-B0-B4I" id="jmY-jJ-g7B"/>
+                                            <outlet property="titleLabel" destination="3zI-7W-BhM" id="6aR-KS-Ydh"/>
+                                        </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="B3c-zk-12y">
-                                        <rect key="frame" x="62.5" y="142" width="268" height="132"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homepageHeaderCell" id="zgj-dn-uZK" customClass="HomepageHeaderCollectionViewCell" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="55.666666666666664" y="142" width="303" height="132"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="132"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="303" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIi-41-L9E">
+                                                    <rect key="frame" x="0.0" y="0.0" width="303" height="132"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="srv-Gi-4ee">
+                                                            <rect key="frame" x="0.0" y="0.0" width="303" height="132"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="RIS-dm-8wa">
+                                                            <rect key="frame" x="15" y="13.333333333333336" width="273" height="92.333333333333314"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Welcome To Encircle 2019!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPs-9B-R0B">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="273" height="42.666666666666664"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="We're excited to have you at this years encircle summit (formerly knowsoon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckY-Yk-iF7">
+                                                                    <rect key="frame" x="0.0" y="51.666666666666671" width="273" height="40.666666666666671"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="RIS-dm-8wa" firstAttribute="width" secondItem="KIi-41-L9E" secondAttribute="width" multiplier="0.9" id="BUc-7Z-vZf"/>
+                                                        <constraint firstItem="RIS-dm-8wa" firstAttribute="height" secondItem="KIi-41-L9E" secondAttribute="height" multiplier="0.7" id="Dec-Vs-PBr"/>
+                                                        <constraint firstItem="srv-Gi-4ee" firstAttribute="width" secondItem="KIi-41-L9E" secondAttribute="width" id="Flo-Zw-7I4"/>
+                                                        <constraint firstItem="RIS-dm-8wa" firstAttribute="centerX" secondItem="KIi-41-L9E" secondAttribute="centerX" id="Hg0-J2-Hy1"/>
+                                                        <constraint firstItem="srv-Gi-4ee" firstAttribute="height" secondItem="KIi-41-L9E" secondAttribute="height" id="VQV-rz-ckm"/>
+                                                        <constraint firstItem="srv-Gi-4ee" firstAttribute="centerY" secondItem="KIi-41-L9E" secondAttribute="centerY" id="hSg-kp-7Wx"/>
+                                                        <constraint firstItem="srv-Gi-4ee" firstAttribute="centerX" secondItem="KIi-41-L9E" secondAttribute="centerX" id="riy-g8-1GY"/>
+                                                        <constraint firstItem="RIS-dm-8wa" firstAttribute="centerY" secondItem="KIi-41-L9E" secondAttribute="centerY" multiplier="0.9" id="uyk-pU-VGO"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                         </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zgj-dn-uZK">
-                                        <rect key="frame" x="62.5" y="284" width="268" height="132"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="132"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="KIi-41-L9E" firstAttribute="height" secondItem="zgj-dn-uZK" secondAttribute="height" id="31g-Ry-Ocg"/>
+                                            <constraint firstItem="KIi-41-L9E" firstAttribute="centerY" secondItem="zgj-dn-uZK" secondAttribute="centerY" id="EPr-Ny-6GU"/>
+                                            <constraint firstItem="KIi-41-L9E" firstAttribute="width" secondItem="zgj-dn-uZK" secondAttribute="width" id="wPx-jN-V9i"/>
+                                            <constraint firstItem="KIi-41-L9E" firstAttribute="centerX" secondItem="zgj-dn-uZK" secondAttribute="centerX" id="zmq-Xf-n8l"/>
+                                        </constraints>
+                                        <size key="customSize" width="303" height="132"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="ckY-Yk-iF7" id="XyS-qG-mYb"/>
+                                            <outlet property="encircleImage" destination="srv-Gi-4ee" id="pr0-TE-Fhh"/>
+                                            <outlet property="titleLabel" destination="gPs-9B-R0B" id="Zvt-98-2NC"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO ENCIRCLE SUMMIT 2019" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdI-8w-Agz">
-                                <rect key="frame" x="20.5" y="46" width="373" height="134.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're excited to have you at this years encircle summit (formerly known as IGNITE.) We're excited to see you soon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkl-ms-RSr">
-                                <rect key="frame" x="20.5" y="195.5" width="373" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fdI-8w-Agz" firstAttribute="centerX" secondItem="VOb-JR-CaQ" secondAttribute="centerX" id="DvE-14-FGP"/>
-                            <constraint firstItem="fdI-8w-Agz" firstAttribute="height" secondItem="LZI-h6-NpF" secondAttribute="height" multiplier="0.15" id="HRd-G5-cPn"/>
-                            <constraint firstItem="hkl-ms-RSr" firstAttribute="top" secondItem="fdI-8w-Agz" secondAttribute="bottom" constant="15" id="Ie3-yq-bvl"/>
-                            <constraint firstItem="hkl-ms-RSr" firstAttribute="leading" secondItem="fdI-8w-Agz" secondAttribute="leading" id="KNx-H6-1DL"/>
-                            <constraint firstItem="fdI-8w-Agz" firstAttribute="centerY" secondItem="VOb-JR-CaQ" secondAttribute="centerY" multiplier="0.25" id="SrJ-OA-kWH"/>
                             <constraint firstItem="VOb-JR-CaQ" firstAttribute="bottom" secondItem="595-Oj-yaa" secondAttribute="bottom" id="bbM-qp-Izz"/>
-                            <constraint firstItem="595-Oj-yaa" firstAttribute="height" secondItem="LZI-h6-NpF" secondAttribute="height" multiplier="0.65" id="cdy-My-Jj6"/>
-                            <constraint firstItem="595-Oj-yaa" firstAttribute="width" secondItem="LZI-h6-NpF" secondAttribute="width" multiplier="0.95" id="fgj-aw-m9W"/>
-                            <constraint firstItem="fdI-8w-Agz" firstAttribute="width" secondItem="LZI-h6-NpF" secondAttribute="width" multiplier="0.9" id="ssh-13-95y"/>
+                            <constraint firstItem="595-Oj-yaa" firstAttribute="width" secondItem="LZI-h6-NpF" secondAttribute="width" id="fgj-aw-m9W"/>
+                            <constraint firstItem="595-Oj-yaa" firstAttribute="height" secondItem="LZI-h6-NpF" secondAttribute="height" multiplier="0.9" id="qan-6s-1ET"/>
                             <constraint firstItem="595-Oj-yaa" firstAttribute="centerX" secondItem="VOb-JR-CaQ" secondAttribute="centerX" id="vQc-Hw-eTK"/>
-                            <constraint firstItem="hkl-ms-RSr" firstAttribute="width" secondItem="fdI-8w-Agz" secondAttribute="width" id="wft-pb-aDj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VOb-JR-CaQ"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="WMm-44-P9y"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="595-Oj-yaa" id="kqe-ab-0MR"/>
-                        <outlet property="descriptionTextField" destination="hkl-ms-RSr" id="vIM-CK-jsa"/>
-                        <outlet property="welcomeTextField" destination="fdI-8w-Agz" id="5g2-Sx-jrh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I05-3a-Qsx" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -6,4 +6,11 @@
 //  Copyright © 2019 DevMountain. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct FontNames {
+        static let playfairBold = "PlayfairDisplay-Bold"
+        static let futuraBook = "FuturaPT-Book"
+        static let futuraBold = "Futura-Bold"
+    }
+

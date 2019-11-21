@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UserController.shared.createUser(with: "Kaden", lastName: "Hendrickson", pronouns: .he, genderIdentity: "Male", sexualOrientation: "Straight", trackPreference: .youth)
+        
+        
+        
         // Override point for customization after application launch.
         return true
     }

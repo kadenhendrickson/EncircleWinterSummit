@@ -8,22 +8,28 @@
 
 import UIKit
 
-class Workshop {
-    let name: String
+class Workshop: Codable {
+    let name: String //WorkshopNumber
     let title: String
     let time: Date
     let description: String
     let room: String
-    let speakers: [Speaker]
-    let map: UIImage
+    let map: Data
     
-    init(name: String, title: String, time: Date, description: String, room: String, speakers: [Speaker] = [], map: UIImage) {
+    init(name: String, title: String, time: Date, description: String, room: String, map: Data) {
         self.name = name
         self.title = title
         self.time = time
         self.description = description
         self.room = room
-        self.speakers = speakers
         self.map = map
     }
+}
+
+extension Workshop: Equatable {
+    static func == (lhs: Workshop, rhs: Workshop) -> Bool {
+        return(lhs.title == rhs.title && lhs.time == rhs.time && lhs.description == rhs.description && lhs.name == rhs.name)
+    }
+    
+    
 }

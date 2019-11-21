@@ -9,43 +9,40 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
-    
-    @IBOutlet weak var welcomeTextField: UILabel!
-    @IBOutlet weak var descriptionTextField: UILabel!
+
     @IBOutlet weak var collectionView: UICollectionView!
-    
+ 
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        setUpViews()
         collectionView.dataSource = self
         collectionView.delegate = self
         self.view.backgroundColor = .black
         collectionView.backgroundColor = .black
+        
     }
     
-    
-    
-    func setUpViews(){
-        welcomeTextField.text = "WELCOME TO ENCIRCLE SUMMIT 2019"
-        descriptionTextField.text = "We're excited to have you at this years encircle summit (formerly known as IGNITE.) We're excited to see you soon!"
-        welcomeTextField.textColor = .white
-        descriptionTextField.textColor = .white
-        
-        
+    func openURL(urlString: String!){
+        if let url = NSURL(string: urlString), !url.absoluteString!.isEmpty {
+            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        }
     }
 }
 
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(indexPath.row < 2){
+        if(indexPath.row == 0){
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homepageHeaderCell", for: indexPath) as? HomepageHeaderCollectionViewCell else {return UICollectionViewCell()}
+            return cell
+            
+        } else if(indexPath.row == 1 || indexPath.row == 2){
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "smallDetailCell", for: indexPath) as? SmallDetailCollectionViewCell else {return UICollectionViewCell()}
-            let info = InfoController.information[indexPath.row]
+            let info = InfoController.information[indexPath.row-1]
                       cell.info = info
                       cell.configureCell(cell: cell)
                       cell.backgroundColor = .blue
@@ -54,7 +51,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         
       
-          
+          //put the next workshop here dummy
             
 //        case 2:
 //            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homepageSessionCell", for: indexPath) as? SessionCollectionViewCell else {return UICollectionViewCell()}
@@ -65,12 +62,31 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
        
     }
 }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(indexPath.row == 1){
+            self.tabBarController?.selectedIndex = 1
+        }
+        if(indexPath.row == 2){
+            openURL(urlString: "https://encircletogether.org/dropin")
+        }
+    }
 }
 
 extension HomePageViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.frame.width-50
-        return CGSize(width: width, height: width/3)
+        if(indexPath.row == 0) {
+            let width = collectionView.bounds.size.width
+            let height = width/1.4
+            return CGSize(width: width, height: height)
+        }
+        let width = view.frame.width-40
+        return CGSize(width: width, height: width/2.8)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 25
+    }
+    
 }
