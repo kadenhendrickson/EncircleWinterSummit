@@ -10,4 +10,6 @@ import UIKit
 
 class ScheduleCollectionViewCell: UICollectionViewCell {
     
+    var workshop: Workshop?
+    
 }

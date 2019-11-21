@@ -8,14 +8,25 @@
 
 import UIKit
 
-class Floor {
+class Floor: Equatable {
+   
     let name: String
-    let rooms: [String]
-    let map: UIImage
+    let rooms: String
+    let map: UIImage?
     
-    init(name: String, rooms: [String], map: UIImage) {
+    init(name: String, rooms: String, map: UIImage?) {
         self.name = name
         self.rooms = rooms
         self.map = map
     }
+    
+    static func == (lhs: Floor, rhs: Floor) -> Bool {
+           return lhs.name == rhs.name && lhs.rooms == lhs.rooms && lhs.map == rhs.map
+       }
+       
 }
+
+enum Building: String, Codable {
+       case adobe = "Adobe Building"
+       case podium = "Podium Building"
+   }
