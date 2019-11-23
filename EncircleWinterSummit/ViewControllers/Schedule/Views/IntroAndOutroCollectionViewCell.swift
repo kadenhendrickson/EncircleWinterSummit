@@ -13,6 +13,7 @@ class IntroAndOutroCollectionViewCell: UICollectionViewCell {
     var workshop: Workshop? {
         didSet {
             setupView()
+            configureCell()
         }
     }
     
@@ -26,12 +27,18 @@ class IntroAndOutroCollectionViewCell: UICollectionViewCell {
     
     func setupView(){
         guard let workshop = workshop else {return}
-        workshopNameLabel.text = workshop.name
+        workshopNameLabel.text = workshop.title
+        workshopNameLabel.textColor = .black
         workshopTimeLabel.text = "\(workshop.time)"
-        workshopRoomLabel.text = workshop.room
+        workshopRoomLabel.text = ("Room: \(workshop.room)")
         workshopDetailLabel.text = workshop.description
         sessionInfoButton.setTitle("Session Info", for: .normal)
         mapButton.setTitle("Map", for: .normal)
+    }
+    
+   func configureCell(){
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.height / 15
     }
     
     @IBAction func sessionInfoButtonTapped(_ sender: Any) {

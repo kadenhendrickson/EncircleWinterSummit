@@ -14,17 +14,18 @@ class WorkshopController  {
     static let shared = WorkshopController()
     //MARK - Properties
     var workshopsForTrack: [[Workshop]] = []
-    var openingSessionTime = WorkshopController.shared.setWorkshopTime(hour: 12, minute: 15)
-    var youthSharedSessionTime = WorkshopController.shared.setWorkshopTime(hour: 13, minute: 30)
-    var sessionOneTime = WorkshopController.shared.setWorkshopTime(hour: 14, minute: 30)
-    var sessionTwoTime = WorkshopController.shared.setWorkshopTime(hour: 15, minute: 30)
-    var sessionThreeTime = WorkshopController.shared.setWorkshopTime(hour: 16, minute: 30)
-    var dinnerSessionTime = WorkshopController.shared.setWorkshopTime(hour: 17, minute: 30)
-    var closingSessionTime = WorkshopController.shared.setWorkshopTime(hour: 18, minute: 00)
     
+    var openingSessionTime = setWorkshopTime(hour: 12, minute: 15)
+    var youthSharedSessionTime = setWorkshopTime(hour: 13, minute: 30)
+    var sessionOneTime = setWorkshopTime(hour: 14, minute: 30)
+    var sessionTwoTime = setWorkshopTime(hour: 15, minute: 30)
+    var sessionThreeTime = setWorkshopTime(hour: 16, minute: 30)
+    var dinnerSessionTime = setWorkshopTime(hour: 17, minute: 30)
+    var closingSessionTime = setWorkshopTime(hour: 18, minute: 00)
+
     //MARK - Functions
-    
-    func setWorkshopTime(hour: Int, minute: Int) -> Date {
+
+    private static func setWorkshopTime(hour: Int, minute: Int) -> Date {
         var dateComponents = DateComponents()
         dateComponents.year = 2019
         dateComponents.month = 12
@@ -32,36 +33,37 @@ class WorkshopController  {
         dateComponents.timeZone = TimeZone(abbreviation: "MST")
         dateComponents.hour = hour
         dateComponents.minute = minute
-    
+
         let calender = Calendar.current
         guard let date = calender.date(from: dateComponents) else {return Date()}
         return date
     }
     
-    func setWorkshopsForTrack(){
+    func setWorkshopsForTrack() -> [[Workshop]]{
         switch UserController.shared.currentUser?.trackPreference {
         case .youth:
-            workshopsForTrack = youthWorkshops
+            return youthWorkshops
         case .youngAdult:
-            workshopsForTrack = youngAdultWokshops
+            return youngAdultWokshops
         case .adult:
-            workshopsForTrack = adultWorkhops
+            print("hi")
+            return adultWorkhops
         case .parent:
-            workshopsForTrack = parentWorkshops
+            return parentWorkshops
         case .educator:
-            workshopsForTrack = educatorWorkshops
+            return educatorWorkshops
         default:
+            return youthWorkshops
             print("This should never print  !!!!!!")
         }
-        
         print("😩😩😩😩😩workshops for track got changed to \(UserController.shared.currentUser?.trackPreference)😩😩😩😩😩😩😩😩😩😩")
     }
     
     //Intro and Outro Workshops
     static var youthIntroAndOutroWorkshops: [Workshop] {
-        let openeingSession = Workshop(name: "Opening Workshop", title: "Opening Workshop", time: Date(), description: "Make sure you get there early and find your seat! You won't want to miss this one!", room: "Main room", map: Data())
-        let dinner = Workshop(name: "Dinner", title: "Dinner", time: Date(), description: "The moment you've all been waiting for!", room: "Room", map: Data())
-        let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: Date(), description: "Grab a seat and get ready for an amazing show featuring performances and speakers", room: "Room", map: Data())
+        let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: Date(), description: "(Overflow available in AlphaBravo)", room: "Main Area", map: Data())
+        let dinner = Workshop(name: "Dinner", title: "Dinner", time: Date(), description: "The moment you've all been waiting for!", room: "Main Area", map: Data())
+        let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: Date(), description: "(Overflow available in AlphaBravo)", room: "Main Area", map: Data())
         return [openeingSession, dinner, closingSession]
     }
     

@@ -22,6 +22,10 @@ class ScheduleViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionView.collectionViewLayout = layout
+        
         WorkshopController.shared.setWorkshopsForTrack()
         sourceOfTruth = WorkshopController.shared.workshopsForTrack
         currentUser = UserController.shared.currentUser
@@ -29,15 +33,12 @@ class ScheduleViewController: UIViewController {
         self.collectionView.backgroundColor = .black
         self.view.backgroundColor = .black
         
-        
         currentTrackButton.setTitle("Test", for: .normal)
         self.view.bringSubviewToFront(currentTrackButton)
-
 
         trackButtons.forEach { (button) in
             button.isHidden = true
         }
-        
 }
     @IBAction func currentTrackButtonClicked(_ sender: Any) {
         trackButtons.forEach { (button) in
@@ -61,7 +62,7 @@ class ScheduleViewController: UIViewController {
         }
         setUserPreference(sender)
         setUserSchedule(sender)
-        WorkshopController.shared.setWorkshopsForTrack()
+        sourceOfTruth = WorkshopController.shared.setWorkshopsForTrack()
         collectionView.reloadData()
     }
     
@@ -95,20 +96,24 @@ class ScheduleViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    //MARK: Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if(segue.identifier == "toWorkshopList"){
-//            if let indexPaths = collectionView.indexPathsForSelectedItems {
-//                let indexPath = indexPaths[0]
-//                guard let destinationVC = segue.destination as? WorkshopListCollectionViewController, let sourceOfTruth = sourceOfTruth else {return}
-//                let workshops = sourceOfTruth[indexPath.row]
-//                destinationVC.workshops =  workshops
-//            }
-//        }
-//    }
+    func setColorScheme() -> UIColor{
+        switch UserController.shared.currentUser?.trackPreference{
+        case .youth:
+            return .red
+        case .youngAdult:
+            return .blue
+        case .adult:
+            return .purple
+        case .parent:
+            return .yellow
+        case .educator:
+            return .purple
+        default:
+            return .clear
+        }
+    }
 }
     
- 
 extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(currentUser?.trackPreference == Track.youngAdult || currentUser?.trackPreference == Track.youth){
@@ -132,14 +137,12 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
             cell.workshop = userSchedule[indexPath.row-1]
             cell.backgroundColor = .white
             return cell
-            
             //Set all other cells to be workshop cells. Check to see if the workshop has been chosen yet.
         default:
             if(UserController.shared.currentUser?.schedule[indexPath.row-1] == nil){ //workshops havent been chosen
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noWorkshopCell", for: indexPath) as? NoWorkshopCollectionViewCell else {return UICollectionViewCell()}
                 cell.indexPath = indexPath.row
                 cell.backgroundColor = .white
-
                 return cell
             } else { // workshops have been chosen already
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scheduleCell", for: indexPath) as? ScheduleCollectionViewCell else {return UICollectionViewCell()}
@@ -159,16 +162,12 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
             switch indexPath.row {
             case 2,3,4,5 :
                 if(UserController.shared.currentUser?.schedule[indexPath.row-1] == nil){
-                    
-
                     let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
                     guard let controller = storyboard.instantiateViewController(withIdentifier: "workshopList") as? WorkshopListViewController else {return}
                     controller.workshops = sourceOfTruth[indexPath.row - 2]
                     self.present(controller, animated: true)
-                    
                 }
                 //present the detail view controller
-                
             default:
                 print("other cells dont go anywhere, you have to click the 'session info' button")
             }
@@ -191,12 +190,15 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
 extension ScheduleViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if(indexPath.row == 0) {
-            let width = collectionView.frame.width
-             let height = width/1.4
+            let width = collectionView.bounds.width
+            let height = width/2
              return CGSize(width: width, height: height)
-         }
-         let width = view.frame.width-40
-         return CGSize(width: width, height: width/2.8)
+        } else if(currentUser?.schedule[indexPath.row-1] == nil){
+            let width = collectionView.bounds.width - 40
+            return CGSize(width: width, height: width/4)
+        }
+        let width = collectionView.bounds.width - 40
+        return CGSize(width: width, height: width/2)
      }
     }
 

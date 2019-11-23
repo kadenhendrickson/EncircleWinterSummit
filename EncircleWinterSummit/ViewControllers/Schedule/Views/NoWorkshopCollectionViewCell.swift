@@ -13,6 +13,7 @@ class NoWorkshopCollectionViewCell: UICollectionViewCell {
     var indexPath: Int? {
         didSet{
             updateView()
+            configureCell()
         }
     }
     
@@ -25,5 +26,10 @@ class NoWorkshopCollectionViewCell: UICollectionViewCell {
         workshopNumberLabel.textColor = .white
         workshopNumberLabel.text = "Workshop \(indexPath!-1)"
         selectWorkshopLabel.text = "Select Workshop"
+    }
+    
+    func configureCell(){
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.height / 15
     }
 }

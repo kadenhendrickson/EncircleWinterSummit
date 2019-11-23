@@ -21,12 +21,17 @@ class TitleCollectionViewCell: UICollectionViewCell {
     
     func setUpViews(){
         titleLabel.text = "SCHEDULE"
-        titleLabel.textColor = .black
+        titleLabel.textColor = .white
         titleLabel.font =  UIFont(name: FontNames.playfairBold, size: 36)
         descriptionLabel.text = "Get ready for an amazing day!"
-        descriptionLabel.textColor = .black
+        descriptionLabel.textColor = .white
         descriptionLabel.font = UIFont(name: FontNames.futuraBook, size: 16)
-//        encircleHouseImage.image = UIImage(named: "EncircleHouse")
+        encircleHouseImage.image = UIImage(named: "EncircleHouse")
+    }
+    
+    func configureCell(height: CGFloat, width: CGFloat){
+        self.bounds.size.height = height
+        self.bounds.size.width = width
     }
     
 }
