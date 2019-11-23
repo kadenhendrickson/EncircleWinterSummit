@@ -13,6 +13,7 @@ class WorkshopCollectionViewCell: UICollectionViewCell {
     var workshop: Workshop? {
         didSet {
             setupViews()
+            configureCell()
         }
     }
     
@@ -22,9 +23,14 @@ class WorkshopCollectionViewCell: UICollectionViewCell {
     
     
     func setupViews(){
-        workshopNameLabel.text = workshop?.name
+        workshopNameLabel.text = workshop?.title
         workshopRoomLabel.text = workshop?.room
         workshopDescriptionLabel.text = workshop?.description
+    }
+    
+    func configureCell(){
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.height / 15
     }
     
     

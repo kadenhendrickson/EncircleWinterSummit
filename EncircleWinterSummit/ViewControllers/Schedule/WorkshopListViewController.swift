@@ -23,6 +23,10 @@ class WorkshopListViewController: UIViewController {
         view.backgroundColor = .black
         collectionView.backgroundColor = .black
         
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionView.collectionViewLayout = layout
+        
 
         // Do any additional setup after loading the view.
     }
@@ -69,7 +73,8 @@ extension WorkshopListViewController: UICollectionViewDelegateFlowLayout {
             let height = width/2
             return CGSize(width: width, height: height)
         } else {
-            return CGSize(width: 100, height: 150)
+            let width = collectionView.bounds.width-40
+            return CGSize(width: width, height: width/2)
         }
         
     }
