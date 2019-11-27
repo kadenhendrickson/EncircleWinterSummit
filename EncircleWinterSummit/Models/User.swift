@@ -19,8 +19,10 @@ class User: Codable {
     var email: String
     var age: String
     var schedule: [Workshop?]
+    var userID: String
     
-    init(firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track, email: String, age: String,  schedule: [Workshop] = []) {
+    init(firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track, email: String, age: String,  schedule: [Workshop] = [], userID: String) {
+        
         self.firstName = firstName
         self.lastName = lastName
         self.pronouns = pronouns
@@ -30,7 +32,21 @@ class User: Codable {
         self.schedule = schedule
         self.email = email
         self.age = age
+        self.userID = userID
     }
+    
+    var dictionaryRepresentation: [String: Any] {
+        return ["firstName" : firstName,
+                "lastName" : lastName,
+                "pronouns" : pronouns.rawValue,
+                "genderIdentity" : genderIdentity,
+                "sexualOrientation" : sexualOrientation,
+                "trackPreference" : trackPreference.rawValue,
+                "email" : email,
+                "age" : age,
+                "workshops" : []]
+    }
+    
 }
 
 enum Pronoun: String, Codable {

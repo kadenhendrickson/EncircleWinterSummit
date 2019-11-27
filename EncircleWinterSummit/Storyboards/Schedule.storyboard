@@ -40,7 +40,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workshop 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ee7-fU-nZ2" customClass="ScheduleCellTitleLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
-                                                    <rect key="frame" x="31" y="0.0" width="249" height="31.666666666666668"/>
+                                                    <rect key="frame" x="15.666666666666657" y="0.0" width="279.66666666666674" height="31.666666666666668"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -100,7 +100,7 @@
                                                 <constraint firstItem="zTb-mm-zMD" firstAttribute="centerY" secondItem="hRE-Au-25E" secondAttribute="centerY" multiplier="0.7" id="hcx-1y-TGU"/>
                                                 <constraint firstItem="Lfw-jq-spM" firstAttribute="width" secondItem="hRE-Au-25E" secondAttribute="width" multiplier="0.9" id="kUg-Xe-wF1"/>
                                                 <constraint firstItem="mvH-DS-jAC" firstAttribute="width" secondItem="hRE-Au-25E" secondAttribute="width" id="mKT-jd-GK4"/>
-                                                <constraint firstItem="Ee7-fU-nZ2" firstAttribute="width" secondItem="mvH-DS-jAC" secondAttribute="width" multiplier="0.800643" id="mmZ-US-ofG"/>
+                                                <constraint firstItem="Ee7-fU-nZ2" firstAttribute="width" secondItem="mvH-DS-jAC" secondAttribute="width" multiplier="0.9" id="mmZ-US-ofG"/>
                                                 <constraint firstItem="zTb-mm-zMD" firstAttribute="height" secondItem="hRE-Au-25E" secondAttribute="height" multiplier="0.25" id="q2N-Ta-pTQ"/>
                                                 <constraint firstItem="r9F-nr-RQc" firstAttribute="centerX" secondItem="hRE-Au-25E" secondAttribute="centerX" multiplier="0.55" id="ryU-d2-KAw"/>
                                                 <constraint firstItem="QB2-IT-F9Q" firstAttribute="width" secondItem="hRE-Au-25E" secondAttribute="width" multiplier="0.4" id="snf-dI-m5s"/>
@@ -602,7 +602,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpU-Wr-uuK">
                                 <rect key="frame" x="37.666666666666657" y="331.33333333333326" width="300" height="406"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
