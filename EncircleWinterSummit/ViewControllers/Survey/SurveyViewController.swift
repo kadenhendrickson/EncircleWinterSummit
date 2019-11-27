@@ -21,7 +21,9 @@ class SurveyViewController: UIViewController {
         
         titleLabel.text = "Surveys"
         messageLabel.text = "We'd love to know what you thought about the programs, workshops, and the summit in general."
-        takeQuizButton.setTitle("Take the quiz now!", for: .normal)
+        takeQuizButton.setTitle("GIVE US SOME FEEDBACK!", for: .normal)
+        takeQuizButton.titleLabel?.font = UIFont(name: FontNames.futuraBook, size: 14)
+        takeQuizButton.setTitleColor(.gray, for: .selected)
         encircleHouseImage.image = UIImage(named: "EncircleHouse")
         encircleHouseImage.alpha = 0.75
         takeQuizButton.backgroundColor = .white

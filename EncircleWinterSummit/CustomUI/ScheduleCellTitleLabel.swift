@@ -16,7 +16,7 @@ class ScheduleCellTitleLabel: UILabel {
      }
      
      func updateFontTo(fontName: String) {
-         let size: CGFloat = 20
+         let size: CGFloat = 17
          self.font = UIFont(name: fontName, size: size)
          self.textColor = .white
      }

@@ -14,6 +14,7 @@ class MapsViewController: UIViewController {
     @IBOutlet weak var selectedFloorButton: UIButton!
     @IBOutlet var buildingButtons: [UIButton]!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var listIndicatorImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,12 @@ class MapsViewController: UIViewController {
         view.backgroundColor = .black
         selectedFloorButton.setTitle("Adobe Building", for: .normal)
         selectedFloorButton.setTitleColor(.white, for: .normal)
+        selectedFloorButton.contentHorizontalAlignment = .left
         FloorController.shared.setBuilding(buildingName: .adobe)
         buildingButtons.forEach { (button) in
             button.isHidden = true
             button.setTitleColor(.white, for: .normal)
+            button.contentHorizontalAlignment = .left
         }
     }
     
@@ -41,6 +44,11 @@ class MapsViewController: UIViewController {
                 UIView.animate(withDuration: 0.3) {
                 button.isHidden = !button.isHidden
                     self.view.layoutIfNeeded()
+                    if(button.isHidden) {
+                        self.listIndicatorImage.image = UIImage(named: "sortDownArrow")
+                    } else {
+                        self.listIndicatorImage.image = UIImage(named: "sortUpArrow")
+                    }
                 }
             }
         }
@@ -54,6 +62,7 @@ class MapsViewController: UIViewController {
                 button.isHidden = true
             }
         }
+        listIndicatorImage.image = UIImage(named: "sortDownArrow")
         guard let building = sender.titleLabel?.text else {return}
         if(building == Building.adobe.rawValue) {
             FloorController.shared.setBuilding(buildingName: .adobe)
@@ -98,7 +107,7 @@ extension MapsViewController: UICollectionViewDelegateFlowLayout {
                return CGSize(width: width, height: height)
            }
            let width = view.frame.width-40
-        return CGSize(width: width, height: width/1.5 )
+        return CGSize(width: width, height: width/1.75)
        }
 }
 

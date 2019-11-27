@@ -81,10 +81,17 @@ class UserController {
       
       func removeWorkshopFromUserList(workshop: Workshop){
           guard let indexOfWorkshopToRemove = currentUser?.schedule.firstIndex(of: workshop), let currentUser = currentUser else {return}
-          currentUser.schedule.remove(at: indexOfWorkshopToRemove)
-        //work on this
-//        db.collection("Users").document(currentUser.userID).updateData(["workshops" : FieldValue.delete()])
+          currentUser.schedule[indexOfWorkshopToRemove] = nil
         
+        var workshops: [String] = []
+        for workshop in currentUser.schedule {
+            
+            if let workshop = workshop {
+                workshops.append(workshop.title)
+            }
+        }
+        
+        db.collection("Users").document(currentUser.userID).updateData(["workshops" : workshops])
         saveToPersistentStore()
       }
     
