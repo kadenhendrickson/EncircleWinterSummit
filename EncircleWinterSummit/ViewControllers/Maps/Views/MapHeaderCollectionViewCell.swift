@@ -13,7 +13,6 @@ class MapHeaderCollectionViewCell: UICollectionViewCell {
     var floor: Floor? {
         didSet {
             setupViews()
-
         }
     }
     
@@ -22,14 +21,10 @@ class MapHeaderCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var buildingImage: UIImageView!
     
     func setupViews(){
-        buildingNameLabel.text = floor?.name
-        buildingNameLabel.textColor = .white
-        buildingNameLabel.font = UIFont(name: FontNames.playfairBold, size: 36)
-        messageLabel.text = floor?.rooms
-        messageLabel.textColor = .white
-        messageLabel.font = UIFont(name: FontNames.futuraBook, size: 16)
-        buildingImage.image = floor?.map
+        guard let floor = floor else {return}
+        buildingNameLabel.text = floor.name
+        messageLabel.text = floor.rooms
+        buildingImage.image = floor.map
+        buildingImage.alpha = 0.75
     }
-    
-    
 }

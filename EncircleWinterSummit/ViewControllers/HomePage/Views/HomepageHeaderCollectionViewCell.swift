@@ -17,18 +17,18 @@ class HomepageHeaderCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpViews()
+//        let overlay = UIView(frame: CGRect(x: 0, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height))
+//        overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
+//        self.encircleImage.addSubview(overlay)
     }
     
     func setUpViews(){
         titleLabel.text = "WELCOME TO THE 2019 ENCRICLE SUMMIT"
         descriptionLabel.text = "We're excited to have you at this year's Encircle Summit. We're excited to see you soon!"
         encircleImage.image = UIImage(named: "EncircleHouse")
-        
-        titleLabel.font = UIFont(name: FontNames.playfairBold, size: 36)
-        titleLabel.textColor  = .white
-
-        descriptionLabel.font = UIFont(name: FontNames.futuraBook, size: 16)
-        descriptionLabel.textColor = .white
+        encircleImage.backgroundColor = .black
+        encircleImage.alpha = 0.75
     }
+    
     
 }

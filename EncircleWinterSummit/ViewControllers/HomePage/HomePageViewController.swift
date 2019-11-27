@@ -13,15 +13,18 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
  
     override func viewDidLoad() {
-
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         self.view.backgroundColor = .black
         collectionView.backgroundColor = .black
-        
-    }
     
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tabBarController?.tabBar.barTintColor = .black
+    }
+
     func openURL(urlString: String!){
         if let url = NSURL(string: urlString), !url.absoluteString!.isEmpty {
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
@@ -38,6 +41,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(indexPath.row == 0){
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homepageHeaderCell", for: indexPath) as? HomepageHeaderCollectionViewCell else {return UICollectionViewCell()}
+            cell.backgroundColor = .black
             return cell
             
         } else if(indexPath.row == 1 || indexPath.row == 2){

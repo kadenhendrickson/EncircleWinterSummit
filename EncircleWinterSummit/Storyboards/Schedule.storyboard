@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,20 +28,112 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="scheduleCell" id="zTq-kx-nVd" customClass="ScheduleCollectionViewCell" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="0.0" width="311" height="211"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hRE-Au-25E">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="211"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvH-DS-jAC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="31.666666666666668"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workshop 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ee7-fU-nZ2" customClass="ScheduleCellTitleLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                    <rect key="frame" x="31" y="0.0" width="249" height="31.666666666666668"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zTb-mm-zMD">
+                                                    <rect key="frame" x="15.666666666666657" y="47.333333333333343" width="279.66666666666674" height="53"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title of workshop)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xe6-cV-EdH" customClass="ScheduleCellNameLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="279.66666666666669" height="26.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="(time of workshop)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="O6o-2j-C6j" customClass="ScheduleCellTimeLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="26.666666666666664" width="279.66666666666669" height="26.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room: Picasso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lfw-jq-spM" customClass="ScheduleCellTimeLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                    <rect key="frame" x="15.666666666666657" y="117.66666666666667" width="279.66666666666674" height="18.000000000000014"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9F-nr-RQc">
+                                                    <rect key="frame" x="31" y="155.66666666666666" width="109" height="26"/>
+                                                    <state key="normal" title="Map"/>
+                                                    <connections>
+                                                        <action selector="mapButtonTapped:" destination="zTq-kx-nVd" eventType="touchUpInside" id="f88-Af-jyx"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-IT-F9Q">
+                                                    <rect key="frame" x="155.66666666666666" y="155.66666666666666" width="124.33333333333334" height="26"/>
+                                                    <state key="normal" title="Session Info"/>
+                                                    <connections>
+                                                        <action selector="sessionInfoButtonTapped:" destination="zTq-kx-nVd" eventType="touchUpInside" id="bgr-l5-7rX"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="r9F-nr-RQc" firstAttribute="width" secondItem="hRE-Au-25E" secondAttribute="width" multiplier="0.35" id="28s-x7-D8H"/>
+                                                <constraint firstItem="Ee7-fU-nZ2" firstAttribute="centerX" secondItem="hRE-Au-25E" secondAttribute="centerX" id="4GR-I7-TAS"/>
+                                                <constraint firstItem="QB2-IT-F9Q" firstAttribute="centerX" secondItem="hRE-Au-25E" secondAttribute="centerX" multiplier="1.4" id="Grp-Zv-pWN"/>
+                                                <constraint firstItem="Ee7-fU-nZ2" firstAttribute="centerY" secondItem="hRE-Au-25E" secondAttribute="centerY" multiplier="0.15" id="IEw-xb-Aam"/>
+                                                <constraint firstItem="Lfw-jq-spM" firstAttribute="centerY" secondItem="hRE-Au-25E" secondAttribute="centerY" multiplier="1.2" id="JNe-Nw-RDe"/>
+                                                <constraint firstItem="zTb-mm-zMD" firstAttribute="centerX" secondItem="hRE-Au-25E" secondAttribute="centerX" id="KbF-se-O92"/>
+                                                <constraint firstItem="QB2-IT-F9Q" firstAttribute="centerY" secondItem="hRE-Au-25E" secondAttribute="centerY" multiplier="1.6" id="Lzl-S4-HEn"/>
+                                                <constraint firstItem="Lfw-jq-spM" firstAttribute="height" secondItem="hRE-Au-25E" secondAttribute="height" multiplier="0.0860656" id="RgU-bM-O4b"/>
+                                                <constraint firstItem="mvH-DS-jAC" firstAttribute="height" secondItem="hRE-Au-25E" secondAttribute="height" multiplier="0.15" id="Z1f-Ni-nLE"/>
+                                                <constraint firstItem="zTb-mm-zMD" firstAttribute="width" secondItem="hRE-Au-25E" secondAttribute="width" multiplier="0.9" id="ZT4-JI-NcW"/>
+                                                <constraint firstItem="mvH-DS-jAC" firstAttribute="centerX" secondItem="hRE-Au-25E" secondAttribute="centerX" id="a69-EY-eTh"/>
+                                                <constraint firstItem="r9F-nr-RQc" firstAttribute="height" secondItem="hRE-Au-25E" secondAttribute="height" multiplier="0.122951" id="dyM-I4-jEV"/>
+                                                <constraint firstItem="r9F-nr-RQc" firstAttribute="centerY" secondItem="hRE-Au-25E" secondAttribute="centerY" multiplier="1.6" id="eHg-wZ-GpE"/>
+                                                <constraint firstItem="zTb-mm-zMD" firstAttribute="centerY" secondItem="hRE-Au-25E" secondAttribute="centerY" multiplier="0.7" id="hcx-1y-TGU"/>
+                                                <constraint firstItem="Lfw-jq-spM" firstAttribute="width" secondItem="hRE-Au-25E" secondAttribute="width" multiplier="0.9" id="kUg-Xe-wF1"/>
+                                                <constraint firstItem="mvH-DS-jAC" firstAttribute="width" secondItem="hRE-Au-25E" secondAttribute="width" id="mKT-jd-GK4"/>
+                                                <constraint firstItem="Ee7-fU-nZ2" firstAttribute="width" secondItem="mvH-DS-jAC" secondAttribute="width" multiplier="0.800643" id="mmZ-US-ofG"/>
+                                                <constraint firstItem="zTb-mm-zMD" firstAttribute="height" secondItem="hRE-Au-25E" secondAttribute="height" multiplier="0.25" id="q2N-Ta-pTQ"/>
+                                                <constraint firstItem="r9F-nr-RQc" firstAttribute="centerX" secondItem="hRE-Au-25E" secondAttribute="centerX" multiplier="0.55" id="ryU-d2-KAw"/>
+                                                <constraint firstItem="QB2-IT-F9Q" firstAttribute="width" secondItem="hRE-Au-25E" secondAttribute="width" multiplier="0.4" id="snf-dI-m5s"/>
+                                                <constraint firstItem="mvH-DS-jAC" firstAttribute="centerY" secondItem="hRE-Au-25E" secondAttribute="centerY" multiplier="0.15" id="tqd-2o-1Ou"/>
+                                                <constraint firstItem="Lfw-jq-spM" firstAttribute="centerX" secondItem="hRE-Au-25E" secondAttribute="centerX" id="ucI-jK-tDv"/>
+                                                <constraint firstItem="QB2-IT-F9Q" firstAttribute="height" secondItem="hRE-Au-25E" secondAttribute="height" multiplier="0.122951" id="ybN-mA-5f4"/>
+                                                <constraint firstItem="Ee7-fU-nZ2" firstAttribute="height" secondItem="mvH-DS-jAC" secondAttribute="height" id="yxH-qw-iIJ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="311" height="211"/>
+                                        <connections>
+                                            <outlet property="nameLabelBackgroundColor" destination="mvH-DS-jAC" id="blv-2I-f0d"/>
+                                            <outlet property="workshopNameLabel" destination="Ee7-fU-nZ2" id="g7v-dg-2Op"/>
+                                            <outlet property="workshopRoomLabel" destination="Lfw-jq-spM" id="b0W-Sk-A6m"/>
+                                            <outlet property="workshopTimeLabel" destination="O6o-2j-C6j" id="adg-k3-Xei"/>
+                                            <outlet property="workshopTitleLabel" destination="Xe6-cV-EdH" id="F4V-SI-WVM"/>
+                                        </connections>
+                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="noWorkshopCell" id="5oe-oZ-Ye8" customClass="NoWorkshopCollectionViewCell" customModule="EncircleWinterSummit" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="0.0" width="311" height="94"/>
+                                        <rect key="frame" x="32" y="221" width="311" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qbt-uM-hTR">
                                             <rect key="frame" x="0.0" y="0.0" width="311" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    Workshop 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL3-du-yVA">
-                                                    <rect key="frame" x="0.0" y="-4.6666666666666679" width="311" height="37.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    Workshop 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gL3-du-yVA" customClass="ScheduleCellTitleLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-4.6666666666666679" width="311" height="42.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Workshop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHp-Vx-phI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Workshop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="WHp-Vx-phI" customClass="ScheduleSelectWorkshopLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
                                                     <rect key="frame" x="46.666666666666671" y="47" width="155.33333333333331" height="28.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -51,8 +144,8 @@
                                                 <constraint firstItem="WHp-Vx-phI" firstAttribute="centerY" secondItem="qbt-uM-hTR" secondAttribute="centerY" multiplier="1.3" id="5sH-on-5TG"/>
                                                 <constraint firstItem="gL3-du-yVA" firstAttribute="width" secondItem="qbt-uM-hTR" secondAttribute="width" id="Hfm-kr-mKt"/>
                                                 <constraint firstItem="WHp-Vx-phI" firstAttribute="width" secondItem="qbt-uM-hTR" secondAttribute="width" multiplier="0.5" id="PbB-LC-V2H"/>
-                                                <constraint firstItem="gL3-du-yVA" firstAttribute="centerY" secondItem="qbt-uM-hTR" secondAttribute="centerY" multiplier="0.3" id="cmT-cF-Trc"/>
-                                                <constraint firstItem="gL3-du-yVA" firstAttribute="height" secondItem="qbt-uM-hTR" secondAttribute="height" multiplier="0.4" id="g0V-BG-eOG"/>
+                                                <constraint firstItem="gL3-du-yVA" firstAttribute="centerY" secondItem="qbt-uM-hTR" secondAttribute="centerY" multiplier="0.35" id="cmT-cF-Trc"/>
+                                                <constraint firstItem="gL3-du-yVA" firstAttribute="height" secondItem="qbt-uM-hTR" secondAttribute="height" multiplier="0.45" id="g0V-BG-eOG"/>
                                                 <constraint firstItem="gL3-du-yVA" firstAttribute="centerX" secondItem="qbt-uM-hTR" secondAttribute="centerX" id="mX2-i1-nmM"/>
                                                 <constraint firstItem="WHp-Vx-phI" firstAttribute="height" secondItem="qbt-uM-hTR" secondAttribute="height" multiplier="0.3" id="ozQ-t7-Sd2"/>
                                                 <constraint firstItem="WHp-Vx-phI" firstAttribute="centerX" secondItem="qbt-uM-hTR" secondAttribute="centerX" multiplier="0.8" id="wF2-8K-EPj"/>
@@ -65,45 +158,38 @@
                                             <outlet property="workshopNumberLabel" destination="gL3-du-yVA" id="8MV-1c-gl4"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="scheduleCell" id="zTq-kx-nVd" customClass="ScheduleCollectionViewCell" customModule="EncircleWinterSummit" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="104" width="311" height="155"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hRE-Au-25E">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="155"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="customSize" width="311" height="155"/>
-                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="introAndOutroCell" id="UkO-1Z-b8L" customClass="IntroAndOutroCollectionViewCell" customModule="EncircleWinterSummit" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="269" width="311" height="245"/>
+                                        <rect key="frame" x="32" y="325" width="311" height="207"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="csn-aY-DrS">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="245"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="207"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-Q4-Wmf">
-                                                    <rect key="frame" x="31" y="181" width="109" height="30"/>
+                                                    <rect key="frame" x="31" y="153" width="109" height="25.333333333333343"/>
                                                     <state key="normal" title="Map"/>
+                                                    <connections>
+                                                        <action selector="mapButtonTapped:" destination="UkO-1Z-b8L" eventType="touchUpInside" id="OX0-iP-UgE"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlV-KF-gPf">
-                                                    <rect key="frame" x="155.66666666666666" y="181" width="124.33333333333334" height="30"/>
+                                                    <rect key="frame" x="155.66666666666666" y="153" width="124.33333333333334" height="25.333333333333343"/>
                                                     <state key="normal" title="Session Info  "/>
                                                     <connections>
                                                         <action selector="sessionInfoButtonTapped:" destination="UkO-1Z-b8L" eventType="touchUpInside" id="T69-o9-KWf"/>
                                                     </connections>
                                                 </button>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-ZS-AmJ">
-                                                    <rect key="frame" x="15.666666666666657" y="18.333333333333332" width="279.66666666666674" height="61.333333333333343"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-ZS-AmJ">
+                                                    <rect key="frame" x="15.666666666666657" y="15.666666666666668" width="279.66666666666674" height="51.666666666666657"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening Session" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1u-eH-v1m">
-                                                            <rect key="frame" x="0.0" y="0.0" width="279.66666666666669" height="39"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening Session" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="M1u-eH-v1m" customClass="ScheduleCellNameLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="279.66666666666669" height="25.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="12PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zii-dT-g9r">
-                                                            <rect key="frame" x="0.0" y="41" width="279.66666666666669" height="20.333333333333329"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="12PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zii-dT-g9r" customClass="ScheduleCellTimeLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="25.666666666666671" width="279.66666666666669" height="26"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -119,16 +205,16 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="h7t-su-NhE">
-                                                    <rect key="frame" x="15.666666666666657" y="98" width="279.66666666666674" height="49"/>
+                                                    <rect key="frame" x="15.666666666666657" y="82.666666666666671" width="279.66666666666674" height="41.666666666666671"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room: Main are" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgy-B1-eVT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="279.66666666666669" height="22.666666666666668"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room: Main are" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hgy-B1-eVT" customClass="ScheduleCellTimeLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="279.66666666666669" height="19"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="overflow available elsewhere" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ru-K9-ocB">
-                                                            <rect key="frame" x="0.0" y="26.666666666666671" width="279.66666666666669" height="22.333333333333329"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="overflow available elsewhere" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ru-K9-ocB">
+                                                            <rect key="frame" x="0.0" y="23" width="279.66666666666669" height="18.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -157,7 +243,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="customSize" width="311" height="245"/>
+                                        <size key="customSize" width="311" height="207"/>
                                         <connections>
                                             <outlet property="mapButton" destination="mq1-Q4-Wmf" id="wfa-Dw-EM9"/>
                                             <outlet property="sessionInfoButton" destination="UlV-KF-gPf" id="pcP-0S-vps"/>
@@ -168,7 +254,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="titleCell" id="Nk8-eR-0J1" customClass="TitleCollectionViewCell" customModule="EncircleWinterSummit" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="524" width="311" height="155"/>
+                                        <rect key="frame" x="32" y="542" width="311" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Swt-MB-LXY">
                                             <rect key="frame" x="0.0" y="0.0" width="311" height="155"/>
@@ -176,22 +262,22 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tk-ew-2dE">
                                                     <rect key="frame" x="0.0" y="0.0" width="311" height="155"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JsU-iE-ZSj">
                                                     <rect key="frame" x="0.0" y="0.0" width="311" height="155"/>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Lmt-Gi-L3r">
-                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="155"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Lmt-Gi-L3r">
+                                                    <rect key="frame" x="15.666666666666657" y="15.666666666666664" width="279.66666666666674" height="108.33333333333334"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzv-7x-hDw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="105.33333333333333" height="75.666666666666671"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="The Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qzv-7x-hDw" customClass="HeaderCellTitleLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="279.66666666666669" height="48"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Enjoy an amazing day!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hez-Ru-dIm">
-                                                            <rect key="frame" x="0.0" y="79.666666666666686" width="170" height="75.333333333333314"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Enjoy an amazing day!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hez-Ru-dIm" customClass="HeaderCellDescriptionLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="53" width="279.66666666666669" height="55.333333333333343"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -203,12 +289,12 @@
                                                 <constraint firstItem="9Tk-ew-2dE" firstAttribute="centerX" secondItem="Swt-MB-LXY" secondAttribute="centerX" id="Duy-Vi-EUy"/>
                                                 <constraint firstItem="JsU-iE-ZSj" firstAttribute="centerY" secondItem="9Tk-ew-2dE" secondAttribute="centerY" id="Hql-yc-Kgw"/>
                                                 <constraint firstItem="JsU-iE-ZSj" firstAttribute="width" secondItem="9Tk-ew-2dE" secondAttribute="width" id="PnP-jd-Wtg"/>
-                                                <constraint firstItem="Lmt-Gi-L3r" firstAttribute="centerY" secondItem="9Tk-ew-2dE" secondAttribute="centerY" id="SYv-vD-JnC"/>
+                                                <constraint firstItem="Lmt-Gi-L3r" firstAttribute="centerY" secondItem="9Tk-ew-2dE" secondAttribute="centerY" multiplier="0.9" id="SYv-vD-JnC"/>
                                                 <constraint firstItem="9Tk-ew-2dE" firstAttribute="height" secondItem="Swt-MB-LXY" secondAttribute="height" id="UX9-GI-lJY"/>
                                                 <constraint firstItem="9Tk-ew-2dE" firstAttribute="width" secondItem="Swt-MB-LXY" secondAttribute="width" id="aXW-7w-VBb"/>
                                                 <constraint firstItem="9Tk-ew-2dE" firstAttribute="centerY" secondItem="Swt-MB-LXY" secondAttribute="centerY" id="b3U-Oh-5bW"/>
-                                                <constraint firstItem="Lmt-Gi-L3r" firstAttribute="width" secondItem="9Tk-ew-2dE" secondAttribute="width" id="fkC-r1-zis"/>
-                                                <constraint firstItem="Lmt-Gi-L3r" firstAttribute="height" secondItem="9Tk-ew-2dE" secondAttribute="height" id="mCp-YQ-TeP"/>
+                                                <constraint firstItem="Lmt-Gi-L3r" firstAttribute="width" secondItem="9Tk-ew-2dE" secondAttribute="width" multiplier="0.9" id="fkC-r1-zis"/>
+                                                <constraint firstItem="Lmt-Gi-L3r" firstAttribute="height" secondItem="9Tk-ew-2dE" secondAttribute="height" multiplier="0.7" id="mCp-YQ-TeP"/>
                                                 <constraint firstItem="JsU-iE-ZSj" firstAttribute="centerX" secondItem="9Tk-ew-2dE" secondAttribute="centerX" id="mWI-SB-e4u"/>
                                                 <constraint firstItem="JsU-iE-ZSj" firstAttribute="height" secondItem="9Tk-ew-2dE" secondAttribute="height" id="vpK-1K-QhE"/>
                                                 <constraint firstItem="Lmt-Gi-L3r" firstAttribute="centerX" secondItem="9Tk-ew-2dE" secondAttribute="centerX" id="wjW-9v-Xmo"/>
@@ -224,67 +310,67 @@
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e4t-yT-xN3">
-                                <rect key="frame" x="10" y="40.666666666666657" width="355" height="50"/>
+                                <rect key="frame" x="0.0" y="39" width="375" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fms-IA-tab">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fms-IA-tab" customClass="TrackDropDownButton" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="bjF-Q1-C9y"/>
+                                            <constraint firstAttribute="height" constant="65" id="bjF-Q1-C9y"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="currentTrackButtonClicked:" destination="QDR-w1-r1L" eventType="touchUpInside" id="Igy-mj-x2G"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAe-a2-3sq">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAe-a2-3sq" customClass="TrackDropDownButton" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <color key="backgroundColor" name="PrideBlue"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Ix8-sl-rA1"/>
+                                            <constraint firstAttribute="height" constant="65" id="Ix8-sl-rA1"/>
                                         </constraints>
                                         <state key="normal" title="Youth Track"/>
                                         <connections>
                                             <action selector="trackButtonTapped:" destination="QDR-w1-r1L" eventType="touchUpInside" id="Tz7-Yf-5hv"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-gF-rXV">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-gF-rXV" customClass="TrackDropDownButton" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <color key="backgroundColor" name="PrideRed"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="88y-hc-cBf"/>
+                                            <constraint firstAttribute="height" constant="65" id="88y-hc-cBf"/>
                                         </constraints>
                                         <state key="normal" title="Young Adult Track"/>
                                         <connections>
                                             <action selector="trackButtonTapped:" destination="QDR-w1-r1L" eventType="touchUpInside" id="eOo-hG-xQf"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8M-5V-vpM">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8M-5V-vpM" customClass="TrackDropDownButton" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <color key="backgroundColor" name="PridePink"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="kcf-eu-yyU"/>
+                                            <constraint firstAttribute="height" constant="65" id="kcf-eu-yyU"/>
                                         </constraints>
                                         <state key="normal" title="Adult Track"/>
                                         <connections>
                                             <action selector="trackButtonTapped:" destination="QDR-w1-r1L" eventType="touchUpInside" id="BpF-3m-Wgi"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaL-16-6I4">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaL-16-6I4" customClass="TrackDropDownButton" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <color key="backgroundColor" name="PridePurple"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="B36-1n-OR5"/>
+                                            <constraint firstAttribute="height" constant="65" id="B36-1n-OR5"/>
                                         </constraints>
                                         <state key="normal" title="Parent/Ally Track"/>
                                         <connections>
                                             <action selector="trackButtonTapped:" destination="QDR-w1-r1L" eventType="touchUpInside" id="4a0-Rw-2S2"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdJ-89-pIU">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdJ-89-pIU" customClass="TrackDropDownButton" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <color key="backgroundColor" name="PrideGreen"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Dfk-hb-kUn"/>
+                                            <constraint firstAttribute="height" constant="65" id="Dfk-hb-kUn"/>
                                         </constraints>
                                         <state key="normal" title="Educator Track"/>
                                         <connections>
@@ -292,22 +378,25 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="yoP-gF-rXV" firstAttribute="height" secondItem="OAe-a2-3sq" secondAttribute="height" id="jkE-uc-zg9"/>
-                                    <constraint firstItem="OaL-16-6I4" firstAttribute="height" secondItem="OAe-a2-3sq" secondAttribute="height" id="pOM-8y-FSh"/>
-                                    <constraint firstItem="CdJ-89-pIU" firstAttribute="height" secondItem="OAe-a2-3sq" secondAttribute="height" id="qTI-AI-y4c"/>
-                                    <constraint firstItem="s8M-5V-vpM" firstAttribute="height" secondItem="OAe-a2-3sq" secondAttribute="height" id="y8d-6J-xwc"/>
-                                </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mgU-VJ-cJl">
+                                <rect key="frame" x="177.66666666666666" y="61.666666666666664" width="19.666666666666657" height="19.666666666666664"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mgU-VJ-cJl" secondAttribute="height" multiplier="1:1" id="Feb-c5-tJz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="0u6-Ze-BI1" firstAttribute="trailing" secondItem="e4t-yT-xN3" secondAttribute="trailing" constant="10" id="5bw-Pe-7MB"/>
+                            <constraint firstItem="0u6-Ze-BI1" firstAttribute="trailing" secondItem="e4t-yT-xN3" secondAttribute="trailing" id="5bw-Pe-7MB"/>
                             <constraint firstItem="B3e-Mq-K7y" firstAttribute="centerX" secondItem="0u6-Ze-BI1" secondAttribute="centerX" id="8vr-Zq-av6"/>
+                            <constraint firstItem="mgU-VJ-cJl" firstAttribute="centerY" secondItem="fms-IA-tab" secondAttribute="centerY" id="KcT-Ba-Ar1"/>
                             <constraint firstItem="B3e-Mq-K7y" firstAttribute="height" secondItem="0u6-Ze-BI1" secondAttribute="height" multiplier="0.95" id="KeE-t8-T3k"/>
-                            <constraint firstItem="e4t-yT-xN3" firstAttribute="leading" secondItem="0u6-Ze-BI1" secondAttribute="leading" constant="10" id="NB4-Nd-2lZ"/>
-                            <constraint firstItem="0u6-Ze-BI1" firstAttribute="top" secondItem="e4t-yT-xN3" secondAttribute="top" constant="3.5" id="qy4-Rh-RcF"/>
+                            <constraint firstItem="e4t-yT-xN3" firstAttribute="leading" secondItem="0u6-Ze-BI1" secondAttribute="leading" id="NB4-Nd-2lZ"/>
+                            <constraint firstItem="mgU-VJ-cJl" firstAttribute="centerX" secondItem="fms-IA-tab" secondAttribute="centerX" id="VyU-LV-6Xg"/>
+                            <constraint firstItem="0u6-Ze-BI1" firstAttribute="top" secondItem="e4t-yT-xN3" secondAttribute="top" constant="5" id="qy4-Rh-RcF"/>
                             <constraint firstItem="B3e-Mq-K7y" firstAttribute="centerY" secondItem="0u6-Ze-BI1" secondAttribute="centerY" multiplier="1.07" id="w0B-Cb-Grj"/>
+                            <constraint firstItem="mgU-VJ-cJl" firstAttribute="height" secondItem="fms-IA-tab" secondAttribute="height" multiplier="0.3" id="xXM-AF-9Ro"/>
                             <constraint firstItem="B3e-Mq-K7y" firstAttribute="width" secondItem="0u6-Ze-BI1" secondAttribute="width" id="zu3-b6-NPR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0u6-Ze-BI1"/>
@@ -317,6 +406,7 @@
                     <connections>
                         <outlet property="collectionView" destination="B3e-Mq-K7y" id="5KE-aa-cso"/>
                         <outlet property="currentTrackButton" destination="fms-IA-tab" id="Zk2-Nj-LDo"/>
+                        <outlet property="sortArrowImage" destination="mgU-VJ-cJl" id="D8B-F1-Waa"/>
                         <outletCollection property="trackButtons" destination="OAe-a2-3sq" collectionClass="NSMutableArray" id="OKe-7d-uYy"/>
                         <outletCollection property="trackButtons" destination="yoP-gF-rXV" collectionClass="NSMutableArray" id="nLJ-Yb-LlD"/>
                         <outletCollection property="trackButtons" destination="s8M-5V-vpM" collectionClass="NSMutableArray" id="aL0-oz-HOY"/>
@@ -357,7 +447,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="58.333333333333336"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tools for Learning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vy-h0-JyH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tools for Learning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vy-h0-JyH" customClass="ScheduleCellNameLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
                                                     <rect key="frame" x="18.666666666666657" y="0.0" width="337.66666666666674" height="58.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -486,57 +576,158 @@
             </objects>
             <point key="canvasLocation" x="-372" y="-48.029556650246306"/>
         </scene>
-        <!--View Controller-->
+        <!--workshopDetailVC-->
         <scene sceneID="jsy-jg-hUr">
             <objects>
-                <viewController id="K7B-mf-ty6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="workshopDetailVC" title="workshopDetailVC" id="K7B-mf-ty6" customClass="WorkshopDetailViewController" customModule="EncircleWinterSummit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7B-Vi-loR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="078-My-t0P">
-                                <rect key="frame" x="164" y="183" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fdb-k5-EiO">
+                                <rect key="frame" x="0.0" y="1.6666666666666714" width="375" height="243.33333333333331"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="078-My-t0P">
+                                <rect key="frame" x="18.666666666666657" y="92.666666666666671" width="337.66666666666674" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-34-fK0">
-                                <rect key="frame" x="170" y="223" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:30 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk9-19-1HC">
+                                <rect key="frame" x="43" y="195" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk9-19-1HC">
-                                <rect key="frame" x="170" y="252" width="38" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlF-mK-UXh">
-                                <rect key="frame" x="170" y="281" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lL-Mr-9pJ">
-                                <rect key="frame" x="170" y="322" width="40" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpU-Wr-uuK">
+                                <rect key="frame" x="37.666666666666657" y="331.33333333333326" width="300" height="406"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room: (Room)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lL-Mr-9pJ">
+                                <rect key="frame" x="37.666666666666664" y="277.33333333333331" width="109.66666666666669" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kk9-19-1HC" firstAttribute="height" secondItem="g7B-Vi-loR" secondAttribute="height" multiplier="0.0258621" id="6Tu-Ca-Obd"/>
+                            <constraint firstItem="fdb-k5-EiO" firstAttribute="centerY" secondItem="ASj-kU-anE" secondAttribute="centerY" multiplier="0.3" id="6qU-ck-BRC"/>
+                            <constraint firstItem="PpU-Wr-uuK" firstAttribute="width" secondItem="g7B-Vi-loR" secondAttribute="width" multiplier="0.8" id="6ue-8W-IwJ"/>
+                            <constraint firstItem="078-My-t0P" firstAttribute="centerY" secondItem="ASj-kU-anE" secondAttribute="centerY" multiplier="0.25" id="BeV-O7-LRH"/>
+                            <constraint firstItem="Kk9-19-1HC" firstAttribute="centerX" secondItem="ASj-kU-anE" secondAttribute="centerX" multiplier="0.4" id="EDt-5Y-ovb"/>
+                            <constraint firstItem="078-My-t0P" firstAttribute="width" secondItem="g7B-Vi-loR" secondAttribute="width" multiplier="0.9" id="FXn-bf-fs7"/>
+                            <constraint firstItem="Kk9-19-1HC" firstAttribute="centerY" secondItem="ASj-kU-anE" secondAttribute="centerY" multiplier="0.5" id="Goh-9P-nF1"/>
+                            <constraint firstItem="5lL-Mr-9pJ" firstAttribute="centerY" secondItem="ASj-kU-anE" secondAttribute="centerY" multiplier="0.7" id="Ubb-rg-fmy"/>
+                            <constraint firstItem="fdb-k5-EiO" firstAttribute="height" secondItem="g7B-Vi-loR" secondAttribute="height" multiplier="0.3" id="ciz-Ep-bQf"/>
+                            <constraint firstItem="5lL-Mr-9pJ" firstAttribute="leading" secondItem="PpU-Wr-uuK" secondAttribute="leading" id="clj-Qk-8ge"/>
+                            <constraint firstItem="PpU-Wr-uuK" firstAttribute="centerY" secondItem="ASj-kU-anE" secondAttribute="centerY" multiplier="1.3" id="daj-hz-pxO"/>
+                            <constraint firstItem="PpU-Wr-uuK" firstAttribute="height" secondItem="g7B-Vi-loR" secondAttribute="height" multiplier="0.5" id="eR4-F7-bBo"/>
+                            <constraint firstItem="fdb-k5-EiO" firstAttribute="centerX" secondItem="ASj-kU-anE" secondAttribute="centerX" id="mBE-a4-NSb"/>
+                            <constraint firstItem="078-My-t0P" firstAttribute="centerX" secondItem="ASj-kU-anE" secondAttribute="centerX" id="pVQ-YR-1V6"/>
+                            <constraint firstItem="PpU-Wr-uuK" firstAttribute="centerX" secondItem="ASj-kU-anE" secondAttribute="centerX" id="tk6-Ye-zlN"/>
+                            <constraint firstItem="fdb-k5-EiO" firstAttribute="width" secondItem="g7B-Vi-loR" secondAttribute="width" id="yBg-2U-i01"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ASj-kU-anE"/>
                     </view>
+                    <connections>
+                        <outlet property="encircleHouseImage" destination="fdb-k5-EiO" id="F2d-Tz-EIq"/>
+                        <outlet property="workshopDescriptionTextView" destination="PpU-Wr-uuK" id="fPr-W8-QNM"/>
+                        <outlet property="workshopRoomLabel" destination="5lL-Mr-9pJ" id="zcT-YI-NHR"/>
+                        <outlet property="workshopTimeLabel" destination="Kk9-19-1HC" id="YJA-ek-YW0"/>
+                        <outlet property="workshopTitleLabel" destination="078-My-t0P" id="qxV-Lv-9cY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmo-aY-lZo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-63"/>
+            <point key="canvasLocation" x="604" y="-63.546798029556655"/>
+        </scene>
+        <!--mapDetailVC-->
+        <scene sceneID="los-wa-oY3">
+            <objects>
+                <viewController storyboardIdentifier="mapDetailVC" title="mapDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6tC-8Y-cS5" customClass="MapDetailViewController" customModule="EncircleWinterSummit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q3A-Jj-Jyi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEJ-dT-AaM">
+                                <rect key="frame" x="0.0" y="29.666666666666671" width="375" height="187.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cEJ-dT-AaM" secondAttribute="height" multiplier="2:1" id="gz4-H0-PWf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOO-LI-jLV">
+                                <rect key="frame" x="37.666666666666671" y="256.66666666666669" width="187.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VxH-PX-rwz">
+                                <rect key="frame" x="28" y="375" width="319" height="318.66666666666674"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VxH-PX-rwz" secondAttribute="height" multiplier="1:1" id="vkB-wY-X3K"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqc-QX-WkL">
+                                <rect key="frame" x="281.33333333333331" y="20.666666666666668" width="75" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EOO-LI-jLV" firstAttribute="centerX" secondItem="LwR-6r-01J" secondAttribute="centerX" multiplier="0.7" id="41O-zJ-mEM"/>
+                            <constraint firstItem="Dqc-QX-WkL" firstAttribute="height" secondItem="q3A-Jj-Jyi" secondAttribute="height" multiplier="0.05" id="4OO-Q6-C4t"/>
+                            <constraint firstItem="Dqc-QX-WkL" firstAttribute="width" secondItem="q3A-Jj-Jyi" secondAttribute="width" multiplier="0.2" id="4ec-gi-dfq"/>
+                            <constraint firstItem="VxH-PX-rwz" firstAttribute="centerX" secondItem="LwR-6r-01J" secondAttribute="centerX" id="Ep1-r6-WLJ"/>
+                            <constraint firstItem="EOO-LI-jLV" firstAttribute="width" secondItem="q3A-Jj-Jyi" secondAttribute="width" multiplier="0.5" id="NYB-Xw-s98"/>
+                            <constraint firstItem="VxH-PX-rwz" firstAttribute="centerY" secondItem="LwR-6r-01J" secondAttribute="centerY" multiplier="1.3" id="P96-FE-FPO"/>
+                            <constraint firstItem="Dqc-QX-WkL" firstAttribute="centerY" secondItem="LwR-6r-01J" secondAttribute="centerY" multiplier="0.1" id="R4H-Xv-vJ8"/>
+                            <constraint firstItem="cEJ-dT-AaM" firstAttribute="centerY" secondItem="LwR-6r-01J" secondAttribute="centerY" multiplier="0.3" id="UAW-bF-Ubs"/>
+                            <constraint firstItem="EOO-LI-jLV" firstAttribute="centerY" secondItem="LwR-6r-01J" secondAttribute="centerY" multiplier="0.65" id="UVM-AJ-2Qf"/>
+                            <constraint firstItem="cEJ-dT-AaM" firstAttribute="width" secondItem="q3A-Jj-Jyi" secondAttribute="width" id="Vcz-a2-Jy0"/>
+                            <constraint firstItem="Dqc-QX-WkL" firstAttribute="centerX" secondItem="LwR-6r-01J" secondAttribute="centerX" multiplier="1.7" id="XVP-Pj-i3W"/>
+                            <constraint firstItem="VxH-PX-rwz" firstAttribute="width" secondItem="q3A-Jj-Jyi" secondAttribute="width" multiplier="0.85" id="lb4-5k-gb2"/>
+                            <constraint firstItem="cEJ-dT-AaM" firstAttribute="centerX" secondItem="LwR-6r-01J" secondAttribute="centerX" id="r2p-aH-Nnb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LwR-6r-01J"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AE4-Cy-Wbe">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="boE-Oa-k3v"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="encircleHouseImage" destination="cEJ-dT-AaM" id="1au-jS-2er"/>
+                        <outlet property="mapImage" destination="VxH-PX-rwz" id="CUe-gA-feb"/>
+                        <outlet property="roomNameLabel" destination="EOO-LI-jLV" id="mcW-zP-hWT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P3N-4n-y25" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711" y="-48"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="PrideBlue">
+            <color red="0.41960784313725491" green="0.8666666666666667" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrideGreen">
+            <color red="0.59999999999999998" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PridePink">
+            <color red="0.9882352941176471" green="0.63529411764705879" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PridePurple">
+            <color red="0.60784313725490191" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrideRed">
+            <color red="0.89803921568627454" green="0.33333333333333331" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

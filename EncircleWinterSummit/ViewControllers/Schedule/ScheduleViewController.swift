@@ -13,38 +13,48 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var currentTrackButton: UIButton!
     @IBOutlet var trackButtons: [UIButton]!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var sortArrowImage: UIImageView!
     
-    var sourceOfTruth: [[Workshop]]?
     var currentUser: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Set up Collection View
         collectionView.dataSource = self
         collectionView.delegate = self
-        
+        self.collectionView.backgroundColor = .black
+        self.view.backgroundColor = .black
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView.collectionViewLayout = layout
         
-        WorkshopController.shared.setWorkshopsForTrack()
-        sourceOfTruth = WorkshopController.shared.workshopsForTrack
+        //Set up properties
         currentUser = UserController.shared.currentUser
         
-        self.collectionView.backgroundColor = .black
-        self.view.backgroundColor = .black
+        //Set up track preference drop dwon
+        currentTrackButton.setTitle(currentUser?.trackPreference.rawValue, for: .normal)
+        currentTrackButton.contentHorizontalAlignment = .left
+        currentTrackButton.backgroundColor = setColorScheme()
+        tabBarController?.tabBar.barTintColor = setColorScheme()
+        sortArrowImage.image = UIImage(named: "sortDownArrow")
         
-        currentTrackButton.setTitle("Test", for: .normal)
         self.view.bringSubviewToFront(currentTrackButton)
-
         trackButtons.forEach { (button) in
             button.isHidden = true
+            button.contentHorizontalAlignment = .left
         }
 }
+    
     @IBAction func currentTrackButtonClicked(_ sender: Any) {
         trackButtons.forEach { (button) in
             if(button.titleLabel?.text != currentTrackButton.titleLabel?.text){
                 UIView.animate(withDuration: 0.3) {
                     button.isHidden = !button.isHidden
+                    if(button.isHidden){
+                      self.sortArrowImage.image = UIImage(named: "sortDownArrow")
+                    } else {
+                    self.sortArrowImage.image = UIImage(named: "sortUpArrow")
+                    }
                     self.view.layoutIfNeeded()
                 }
             }
@@ -60,58 +70,52 @@ class ScheduleViewController: UIViewController {
                 button.isHidden = true
             }
         }
-        setUserPreference(sender)
-        setUserSchedule(sender)
-        sourceOfTruth = WorkshopController.shared.setWorkshopsForTrack()
+        self.sortArrowImage.image = UIImage(named: "sortDownArrow")
+        resetUserInfo(sender)
+        tabBarController?.tabBar.barTintColor = setColorScheme()
         collectionView.reloadData()
     }
     
     //HELPER FUNCTIONS
-    func setUserPreference(_ sender: UIButton){
+    func resetUserInfo(_ sender: UIButton){
            switch sender.titleLabel?.text {
            case Track.youth.rawValue:
                 UserController.shared.setUserTrackPreference(track: .youth)
+                UserController.shared.resetUserSchedule(track: .youth)
            case Track.adult.rawValue:
                    UserController.shared.setUserTrackPreference(track: .adult)
+                   UserController.shared.resetUserSchedule(track: .adult)
            case Track.youngAdult.rawValue:
                    UserController.shared.setUserTrackPreference(track: .youngAdult)
+                   UserController.shared.resetUserSchedule(track: .youngAdult)
            case Track.parent.rawValue:
                    UserController.shared.setUserTrackPreference(track: .parent)
+                   UserController.shared.resetUserSchedule(track: .parent)
            case Track.educator.rawValue:
                    UserController.shared.setUserTrackPreference(track: .educator)
+                   UserController.shared.resetUserSchedule(track: .educator)
                default:
                    print("nope bitch")
                }
        }
     
-    //Changes the Schedule
-    func setUserSchedule(_ sender: UIButton){
-        switch sender.titleLabel?.text{
-        case Track.youngAdult.rawValue, Track.youth.rawValue:
-            currentUser?.schedule = [WorkshopController.youthIntroAndOutroWorkshops[0], nil, nil, nil, nil, WorkshopController.youthIntroAndOutroWorkshops[1], WorkshopController.youthIntroAndOutroWorkshops[2]]
-        case Track.adult.rawValue, Track.parent.rawValue, Track.educator.rawValue:
-            currentUser?.schedule = [WorkshopController.adultIntroAndOutroWorkshops[0], nil, nil, nil, WorkshopController.adultIntroAndOutroWorkshops[1], WorkshopController.adultIntroAndOutroWorkshops[2]]
-        default: print("this shouldn't be printing")
-        }
-        collectionView.reloadData()
-    }
-    
     func setColorScheme() -> UIColor{
         switch UserController.shared.currentUser?.trackPreference{
         case .youth:
-            return .red
+            return .prideBlue
         case .youngAdult:
-            return .blue
+            return .prideRed
         case .adult:
-            return .purple
+            return .pridePink
         case .parent:
-            return .yellow
+            return .pridePurple
         case .educator:
-            return .purple
+            return .prideGreen
         default:
             return .clear
         }
     }
+    
 }
     
 extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -135,6 +139,7 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
         case 1, userSchedule.count, userSchedule.count - 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "introAndOutroCell", for: indexPath) as? IntroAndOutroCollectionViewCell else {return UICollectionViewCell()}
             cell.workshop = userSchedule[indexPath.row-1]
+            cell.delegate = self
             cell.backgroundColor = .white
             return cell
             //Set all other cells to be workshop cells. Check to see if the workshop has been chosen yet.
@@ -142,12 +147,15 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
             if(UserController.shared.currentUser?.schedule[indexPath.row-1] == nil){ //workshops havent been chosen
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noWorkshopCell", for: indexPath) as? NoWorkshopCollectionViewCell else {return UICollectionViewCell()}
                 cell.indexPath = indexPath.row
+                cell.workshopNumberLabel.backgroundColor = setColorScheme()
                 cell.backgroundColor = .white
                 return cell
             } else { // workshops have been chosen already
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scheduleCell", for: indexPath) as? ScheduleCollectionViewCell else {return UICollectionViewCell()}
                 let workshop = UserController.shared.currentUser?.schedule[indexPath.row-1]
                 cell.workshop = workshop
+                cell.delegate = self
+                cell.nameLabelBackgroundColor.backgroundColor = setColorScheme()
                 cell.backgroundColor = .white
                 return cell
             }
@@ -155,19 +163,20 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let sourceOfTruth = sourceOfTruth else {return
-            
-        }
         if(UserController.shared.currentUser?.trackPreference == Track.youth || UserController.shared.currentUser?.trackPreference == Track.youngAdult) {
             switch indexPath.row {
             case 2,3,4,5 :
                 if(UserController.shared.currentUser?.schedule[indexPath.row-1] == nil){
                     let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
                     guard let controller = storyboard.instantiateViewController(withIdentifier: "workshopList") as? WorkshopListViewController else {return}
-                    controller.workshops = sourceOfTruth[indexPath.row - 2]
+                    controller.delegate = self
+                    if(UserController.shared.currentUser?.trackPreference == .youth){
+                        controller.workshops = WorkshopController.shared.youthWorkshops[indexPath.row - 2]
+                    } else{
+                        controller.workshops = WorkshopController.shared.youngAdultWokshops[indexPath.row - 2]
+                    }
                     self.present(controller, animated: true)
                 }
-                //present the detail view controller
             default:
                 print("other cells dont go anywhere, you have to click the 'session info' button")
             }
@@ -177,7 +186,14 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
                 if(UserController.shared.currentUser?.schedule[indexPath.row-1] == nil){
                     let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
                     guard let controller = storyboard.instantiateViewController(withIdentifier: "workshopList") as? WorkshopListViewController else {return}
-                    controller.workshops = sourceOfTruth[1]
+                    controller.delegate = self
+                    if(UserController.shared.currentUser?.trackPreference == .adult) {
+                        controller.workshops = WorkshopController.shared.adultWorkhops[indexPath.row-2]
+                    } else if(UserController.shared.currentUser?.trackPreference == .parent){
+                        controller.workshops = WorkshopController.shared.parentWorkshops[indexPath.row-2]
+                    } else {
+                        controller.workshops = WorkshopController.shared.educatorWorkshops[indexPath.row-2]
+                    }
                     self.present(controller, animated: true)
                 }
             default:
@@ -191,14 +207,53 @@ extension ScheduleViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if(indexPath.row == 0) {
             let width = collectionView.bounds.width
-            let height = width/2
+            let height = width/2.4
              return CGSize(width: width, height: height)
         } else if(currentUser?.schedule[indexPath.row-1] == nil){
             let width = collectionView.bounds.width - 40
             return CGSize(width: width, height: width/4)
         }
         let width = collectionView.bounds.width - 40
-        return CGSize(width: width, height: width/2)
+        return CGSize(width: width, height: width/1.5)
      }
     }
+
+extension ScheduleViewController: IntroAndOutroCollectionViewCellDelegate {
+    func sessionInfoButtonTapped(workshop: Workshop) {
+        print("I recieved my instructions")
+        let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "workshopDetailVC") as? WorkshopDetailViewController else {return}
+        viewController.workshop = workshop
+        self.present(viewController, animated: true)
+    }
+    
+    func mapButtonTapped(workshop: Workshop) {
+        let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "mapDetailVC") as? MapDetailViewController else {return}
+        viewController.workshop = workshop
+        self.present(viewController, animated: true)
+    }
+}
+extension ScheduleViewController: WorkshopListViewControllerDelegate {
+    func reloadData() {
+        collectionView.reloadData()
+    }
+}
+
+extension ScheduleViewController: ScheduleCollectionViewCellDelegate {
+    func scheduleSessionInfoButtonTapped(workshop: Workshop) {
+        let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
+         guard let viewController = storyboard.instantiateViewController(withIdentifier: "workshopDetailVC") as? WorkshopDetailViewController else {return}
+         viewController.workshop = workshop
+         self.present(viewController, animated: true)
+    }
+    
+    func scheduleMapButtonTapped(workshop: Workshop) {
+        let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "mapDetailVC") as? MapDetailViewController else {return}
+        viewController.workshop = workshop
+        self.present(viewController, animated: true)
+    }
+}
+
 

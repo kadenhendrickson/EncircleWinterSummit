@@ -30,6 +30,11 @@ class MapsViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(true)
+          tabBarController?.tabBar.barTintColor = .black
+      }
+    
     @IBAction func currentBuildingButtonClicked(_ sender: UIButton) {
         buildingButtons.forEach { (button) in
             if(selectedFloorButton.titleLabel?.text != button.titleLabel?.text){
@@ -89,7 +94,7 @@ extension MapsViewController: UICollectionViewDelegateFlowLayout {
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            if(indexPath.row == 0) {
                let width = collectionView.bounds.size.width
-            let height = width/2
+            let height = width/2.4
                return CGSize(width: width, height: height)
            }
            let width = view.frame.width-40

@@ -33,6 +33,11 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(true)
+          tabBarController?.tabBar.barTintColor = .black
+      }
+    
     @IBAction func preferredPronounButtonTapped(_ sender: UIButton) {
         print("FUCK")
         pronounButtons.forEach { (button) in

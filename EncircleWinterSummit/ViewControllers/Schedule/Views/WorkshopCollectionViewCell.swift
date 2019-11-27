@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol WorkshopCollectionViewCellDelegate: class {
+    func addToScheduleButtonTapped()
+    func sessionInfoButtonTapped(workshop: Workshop)
+}
+
 class WorkshopCollectionViewCell: UICollectionViewCell {
+    
+    weak var delegate: WorkshopCollectionViewCellDelegate?
     
     var workshop: Workshop? {
         didSet {
@@ -23,21 +30,39 @@ class WorkshopCollectionViewCell: UICollectionViewCell {
     
     
     func setupViews(){
-        workshopNameLabel.text = workshop?.title
-        workshopRoomLabel.text = workshop?.room
-        workshopDescriptionLabel.text = workshop?.description
+        guard let  workshop = workshop else {return}
+        workshopNameLabel.text = workshop.title.uppercased()
+        workshopRoomLabel.text = "Room: \(workshop.room)"
+        workshopDescriptionLabel.text = workshop.description
     }
     
     func configureCell(){
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.frame.height / 15
+        self.layer.cornerRadius = 10
     }
     
     
-    @IBAction func sessionInfoButtonClicked(_ sender: Any) {
+    @IBAction func sessionInfoButtonClicked(_ sender: UIButton) {
+        guard let workshop = workshop else {return}
+        delegate?.sessionInfoButtonTapped(workshop: workshop)
+        
     }
     
     @IBAction func addToScheduleButtonTapped(_ sender: Any) {
+        guard let workshop = workshop else {return}
+        switch workshop.name{
+        case  "Workshop 1":
+            UserController.shared.addWorkshopToUserList(at: 1, workshop: workshop)
+        case "Workshop 2":
+            UserController.shared.addWorkshopToUserList(at: 2, workshop: workshop)
+        case "Workshop 3":
+            UserController.shared.addWorkshopToUserList(at: 3, workshop: workshop)
+        case  "Workshop 4":
+            UserController.shared.addWorkshopToUserList(at: 4, workshop: workshop)
+        default:
+            print("There shouldn't be anything WITH THIS TITLE")
+        }
+        delegate?.addToScheduleButtonTapped()
     }
     
 }
