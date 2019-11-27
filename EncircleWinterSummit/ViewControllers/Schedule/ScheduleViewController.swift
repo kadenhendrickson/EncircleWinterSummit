@@ -45,6 +45,12 @@ class ScheduleViewController: UIViewController {
         }
 }
     
+    override func viewWillAppear(_ animated: Bool) {
+             super.viewWillAppear(true)
+             tabBarController?.tabBar.barTintColor = setColorScheme()
+         }
+       
+    
     @IBAction func currentTrackButtonClicked(_ sender: Any) {
         trackButtons.forEach { (button) in
             if(button.titleLabel?.text != currentTrackButton.titleLabel?.text){
@@ -157,6 +163,11 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
                 cell.delegate = self
                 cell.nameLabelBackgroundColor.backgroundColor = setColorScheme()
                 cell.backgroundColor = .white
+                if((currentUser?.trackPreference == .youth || currentUser?.trackPreference == .youngAdult) && indexPath.row == 2){
+                    cell.removeWorkshopButton.isHidden = true
+                } else {
+                    cell.removeWorkshopButton.isHidden = false
+                }
                 return cell
             }
         }
@@ -216,6 +227,10 @@ extension ScheduleViewController: UICollectionViewDelegateFlowLayout {
         let width = collectionView.bounds.width - 40
         return CGSize(width: width, height: width/1.5)
      }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15.0
+        
+    }
     }
 
 extension ScheduleViewController: IntroAndOutroCollectionViewCellDelegate {
@@ -241,6 +256,11 @@ extension ScheduleViewController: WorkshopListViewControllerDelegate {
 }
 
 extension ScheduleViewController: ScheduleCollectionViewCellDelegate {
+    func removeWorkshopButtonTapped(workshop: Workshop) {
+        UserController.shared.removeWorkshopFromUserList(workshop: workshop)
+        collectionView.reloadData()
+    }
+    
     func scheduleSessionInfoButtonTapped(workshop: Workshop) {
         let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
          guard let viewController = storyboard.instantiateViewController(withIdentifier: "workshopDetailVC") as? WorkshopDetailViewController else {return}

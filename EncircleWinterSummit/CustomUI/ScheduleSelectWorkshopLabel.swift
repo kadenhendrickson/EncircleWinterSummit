@@ -16,7 +16,7 @@ class ScheduleSelectWorkshopLabel: UILabel {
     }
     
     func updateFontTo(fontName: String) {
-        let size: CGFloat = 16
+        let size: CGFloat = 15
         self.font = UIFont(name: fontName, size: size)
         self.textColor = .black
     }

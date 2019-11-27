@@ -22,6 +22,9 @@
 		DC7A42572374D3D5009CF094 /* ScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A42562374D3D5009CF094 /* ScheduleCollectionViewCell.swift */; };
 		DC7A42592374E1A9009CF094 /* NoWorkshopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A42582374E1A9009CF094 /* NoWorkshopCollectionViewCell.swift */; };
 		DC7A425B2374E21E009CF094 /* IntroAndOutroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A425A2374E21E009CF094 /* IntroAndOutroCollectionViewCell.swift */; };
+		DC961BCE238E695000D3B704 /* ScheduleCellRoomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC961BCD238E695000D3B704 /* ScheduleCellRoomLabel.swift */; };
+		DC961BD0238E72BF00D3B704 /* ScheduleInfoButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC961BCF238E72BF00D3B704 /* ScheduleInfoButtons.swift */; };
+		DC961BD2238E753B00D3B704 /* ScheduleInfoButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC961BD1238E753B00D3B704 /* ScheduleInfoButton2.swift */; };
 		DC9D621F23733007002ED714 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D621E23733007002ED714 /* UserController.swift */; };
 		DC9D6221237336A0002ED714 /* WorkshopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D6220237336A0002ED714 /* WorkshopController.swift */; };
 		DC9D622323733DB5002ED714 /* FloorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D622223733DB5002ED714 /* FloorController.swift */; };
@@ -102,6 +105,9 @@
 		DC7A42562374D3D5009CF094 /* ScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC7A42582374E1A9009CF094 /* NoWorkshopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoWorkshopCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC7A425A2374E21E009CF094 /* IntroAndOutroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroAndOutroCollectionViewCell.swift; sourceTree = "<group>"; };
+		DC961BCD238E695000D3B704 /* ScheduleCellRoomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellRoomLabel.swift; sourceTree = "<group>"; };
+		DC961BCF238E72BF00D3B704 /* ScheduleInfoButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInfoButtons.swift; sourceTree = "<group>"; };
+		DC961BD1238E753B00D3B704 /* ScheduleInfoButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInfoButton2.swift; sourceTree = "<group>"; };
 		DC9D621E23733007002ED714 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		DC9D6220237336A0002ED714 /* WorkshopController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopController.swift; sourceTree = "<group>"; };
 		DC9D622223733DB5002ED714 /* FloorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorController.swift; sourceTree = "<group>"; };
@@ -215,6 +221,9 @@
 				DCC361BB238C8DED003109CF /* ScheduleCellTimeLabel.swift */,
 				DCC361BD238C8F5E003109CF /* ScheduleSelectWorkshopLabel.swift */,
 				DCC361BF238C94E5003109CF /* TrackDropDownButton.swift */,
+				DC961BCD238E695000D3B704 /* ScheduleCellRoomLabel.swift */,
+				DC961BCF238E72BF00D3B704 /* ScheduleInfoButtons.swift */,
+				DC961BD1238E753B00D3B704 /* ScheduleInfoButton2.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -544,6 +553,8 @@
 				DCC361C0238C94E5003109CF /* TrackDropDownButton.swift in Sources */,
 				DCEEF21523763C7F005F3EE7 /* WorkshopCollectionViewCell.swift in Sources */,
 				DC758F7B2380B04800F9B2A0 /* StyleGuide.swift in Sources */,
+				DC961BD0238E72BF00D3B704 /* ScheduleInfoButtons.swift in Sources */,
+				DC961BD2238E753B00D3B704 /* ScheduleInfoButton2.swift in Sources */,
 				DCC361B0238C6EB9003109CF /* HeaderCellDescriptionLabel.swift in Sources */,
 				DCC361BE238C8F5E003109CF /* ScheduleSelectWorkshopLabel.swift in Sources */,
 				DC76948123313C44005709C8 /* HomePageViewController.swift in Sources */,
@@ -552,6 +563,7 @@
 				DCC361BC238C8DED003109CF /* ScheduleCellTimeLabel.swift in Sources */,
 				DC7A42592374E1A9009CF094 /* NoWorkshopCollectionViewCell.swift in Sources */,
 				DCC361B6238C7AFE003109CF /* UIImageExtension.swift in Sources */,
+				DC961BCE238E695000D3B704 /* ScheduleCellRoomLabel.swift in Sources */,
 				DCE44C3B22FCAC93006E5D7D /* Workshop.swift in Sources */,
 				DCC361A62389C7F4003109CF /* MapDetailViewController.swift in Sources */,
 				DC3AE2782380BE7500F0E04B /* HomepageHeaderCollectionViewCell.swift in Sources */,

@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-//        UserController.shared.currentUser = UserController.shared.loadFromPersistentStore()
+        
+        UserController.shared.currentUser = UserController.shared.loadFromPersistentStore()
         
         if(UserController.shared.currentUser == nil){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

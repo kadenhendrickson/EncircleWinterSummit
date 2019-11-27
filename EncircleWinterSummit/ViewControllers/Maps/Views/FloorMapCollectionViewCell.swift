@@ -34,14 +34,16 @@ class FloorMapCollectionViewCell: UICollectionViewCell {
         coloredHeader.backgroundColor = determineHeaderColor()
         floorNumberLabel.text = floor?.name
         floorNumberLabel.textColor = .white
-        floorNumberLabel.font = UIFont(name: FontNames.futuraBold, size: 22)
+        floorNumberLabel.font = UIFont(name: FontNames.futuraBold, size: 18)
         roomTitleLabel.text = "ROOMS ON THIS FLOOR:"
         roomTitleLabel.textColor = .black
-        roomTitleLabel.font = UIFont(name: FontNames.futuraBold, size: 16)
-        roomNamesLabel.text = floor?.rooms
+        roomTitleLabel.font = UIFont(name: FontNames.futuraBold, size: 14)
+        roomNamesLabel.text = floor?.rooms.uppercased()
+        roomNamesLabel.font = UIFont(name: FontNames.futuraBook, size: 14)
         viewMapButton.setTitle("View Map", for: .normal)
         viewMapButton.setTitleColor(.black, for: .normal)
-        locationIconImage.image = UIImage(named: "locationIcon")
+        viewMapButton.titleLabel?.font = UIFont(name: FontNames.futuraBold, size: 14)
+        locationIconImage.image = UIImage(named: "mapIcon")
     }
     
     func configureCell(cell: FloorMapCollectionViewCell) {

@@ -39,32 +39,10 @@ class WorkshopController  {
         return date
     }
     
-//    func setWorkshopsForTrack(){
-//  	      switch UserController.shared.currentUser?.trackPreference {
-//        case .youth:
-//            workshopsForTrack = youthWorkshops
-//        case .youngAdult:
-//            workshopsForTrack = youngAdultWokshops
-//        case .adult:
-//            print("hi")
-//            return adultWorkhops
-//        case .parent:
-//            return parentWorkshops
-//        case .educator:
-//            return educatorWorkshops
-//        default:
-//            return youthWorkshops
-//        }
-//        print("😩😩😩😩😩workshops for track got changed to \(UserController.shared.currentUser?.trackPreference)😩😩😩😩😩😩😩😩😩😩")
-//    }
-    
-
-
-    
     //Intro and Outro Workshops
     var youthIntroAndOutroWorkshops: [Workshop] {
         let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime , description: "(Overflow available in AlphaBravo)", room: "Main Area", map: "opening Map")
-        let firstWorkshop = Workshop(name: "Workshop 1", title: "FirstWorkshop", time: youthSharedSessionTime, description: "This is just a placeholder for the first youth and young adult workshop", room: "alphabravo", map: "Adobe-1")
+        let firstWorkshop = Workshop(name: "Workshop 1", title: "An Introduction to Encircle", time: youthSharedSessionTime, description: "Learn about what Encircle can offer you, eat some treats and play some games.", room: "AlphaBravo", map: "Adobe-1")
         let dinner = Workshop(name: "Dinner", title: "Dinner", time: dinnerSessionTime, description: "The moment you've all been waiting for!", room: "Main Area", map: "opening Map")
         let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "(Overflow available in AlphaBravo)", room: "Main Area", map: "opening Map")
         return [openeingSession,firstWorkshop, dinner, closingSession]

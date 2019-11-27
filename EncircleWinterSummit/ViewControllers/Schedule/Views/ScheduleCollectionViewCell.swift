@@ -11,6 +11,7 @@ import UIKit
 protocol ScheduleCollectionViewCellDelegate: class {
     func scheduleSessionInfoButtonTapped(workshop: Workshop)
     func scheduleMapButtonTapped(workshop: Workshop)
+    func removeWorkshopButtonTapped(workshop: Workshop)
 }
 
 class ScheduleCollectionViewCell: UICollectionViewCell {
@@ -29,6 +30,7 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var workshopTitleLabel: UILabel!
     @IBOutlet weak var workshopTimeLabel: UILabel!
     @IBOutlet weak var workshopRoomLabel: UILabel!
+    @IBOutlet weak var removeWorkshopButton: UIButton!
     
     
     @IBAction func mapButtonTapped(_ sender: Any) {
@@ -41,6 +43,10 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
         delegate?.scheduleSessionInfoButtonTapped(workshop: workshop)
     }
     
+    @IBAction func removeWorkshopButtonTapped(_ sender: Any) {
+        guard let workshop = workshop else {return}
+        delegate?.removeWorkshopButtonTapped(workshop: workshop)
+    }
     
     func setUpViews(){
         guard let workshop = workshop else {return}
@@ -48,6 +54,7 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
         workshopTitleLabel.text = workshop.title.uppercased()
         workshopTimeLabel.text = workshop.time.toString()
         workshopRoomLabel.text = "Room: \(workshop.room)"
+        removeWorkshopButton.setBackgroundImage(UIImage(named: "removeWorkshop"), for: .normal)
     }
      
     func configureCell(){

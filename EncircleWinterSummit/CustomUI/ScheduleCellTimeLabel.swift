@@ -12,11 +12,11 @@ class ScheduleCellTimeLabel: UILabel {
     
     override func awakeFromNib() {
             super.awakeFromNib()
-            updateFontTo(fontName: FontNames.playfairBold)
+            updateFontTo(fontName: FontNames.futuraBook)
         }
         
         func updateFontTo(fontName: String) {
-            let size: CGFloat = 18
+            let size: CGFloat = 17
             self.font = UIFont(name: fontName, size: size)
             self.textColor = .black
         }

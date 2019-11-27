@@ -23,6 +23,16 @@ class FloorDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
+        
+        floorMapImage.isUserInteractionEnabled = true
+        
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGesture(sender:)))
+        floorMapImage.addGestureRecognizer(pinchGesture)
+    }
+    
+    @objc func pinchGesture(sender: UIPinchGestureRecognizer) {
+        sender.scale = 1.0
+        sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
     }
     
     func setUpViews(){

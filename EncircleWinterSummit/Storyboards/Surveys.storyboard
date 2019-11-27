@@ -37,8 +37,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uM-BW-EcD">
-                                <rect key="frame" x="41.5" y="409.5" width="331" height="38"/>
-                                <state key="normal" title="Take the quiz"/>
+                                <rect key="frame" x="103.5" y="397.5" width="207" height="62"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Give us some feedback!"/>
                                 <connections>
                                     <action selector="takeQuizButtonTapped:" destination="G43-DS-bVH" eventType="touchUpInside" id="TU1-R7-DVF"/>
                                 </connections>
@@ -48,12 +49,12 @@
                         <constraints>
                             <constraint firstItem="0uM-BW-EcD" firstAttribute="centerY" secondItem="fz5-MV-lSs" secondAttribute="centerY" id="Aar-gA-ExE"/>
                             <constraint firstItem="Uh8-gH-Kfo" firstAttribute="width" secondItem="XAC-gc-dSn" secondAttribute="width" id="BfD-YH-jGa"/>
-                            <constraint firstItem="0uM-BW-EcD" firstAttribute="width" secondItem="fz5-MV-lSs" secondAttribute="width" multiplier="0.8" id="Day-dT-DU2"/>
+                            <constraint firstItem="0uM-BW-EcD" firstAttribute="width" secondItem="fz5-MV-lSs" secondAttribute="width" multiplier="0.5" id="Day-dT-DU2"/>
                             <constraint firstItem="Uh8-gH-Kfo" firstAttribute="centerX" secondItem="fz5-MV-lSs" secondAttribute="centerX" id="M2y-gU-Ga6"/>
                             <constraint firstItem="Uh8-gH-Kfo" firstAttribute="height" secondItem="XAC-gc-dSn" secondAttribute="height" multiplier="0.23" id="Q9k-RX-NFc"/>
                             <constraint firstItem="ecJ-K4-E4Y" firstAttribute="centerX" secondItem="fz5-MV-lSs" secondAttribute="centerX" id="Xjn-JJ-u70"/>
                             <constraint firstItem="ecJ-K4-E4Y" firstAttribute="width" secondItem="fz5-MV-lSs" secondAttribute="width" multiplier="0.9" id="jiw-IA-Rzn"/>
-                            <constraint firstItem="0uM-BW-EcD" firstAttribute="height" secondItem="fz5-MV-lSs" secondAttribute="height" multiplier="0.05" id="kMz-XW-p5y"/>
+                            <constraint firstItem="0uM-BW-EcD" firstAttribute="height" secondItem="fz5-MV-lSs" secondAttribute="height" multiplier="0.08" id="kMz-XW-p5y"/>
                             <constraint firstItem="Uh8-gH-Kfo" firstAttribute="centerY" secondItem="fz5-MV-lSs" secondAttribute="centerY" multiplier="0.35" id="mTo-6i-BYp"/>
                             <constraint firstItem="ecJ-K4-E4Y" firstAttribute="centerY" secondItem="fz5-MV-lSs" secondAttribute="centerY" multiplier="0.35" id="pXg-U9-mQL"/>
                             <constraint firstItem="0uM-BW-EcD" firstAttribute="centerX" secondItem="fz5-MV-lSs" secondAttribute="centerX" id="uut-Ab-ijX"/>
