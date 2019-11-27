@@ -22,14 +22,13 @@ class NoWorkshopCollectionViewCell: UICollectionViewCell {
     
     
     func updateView(){
-        workshopNumberLabel.backgroundColor = .systemPink
         workshopNumberLabel.textColor = .white
-        workshopNumberLabel.text = "Workshop \(indexPath!-1)"
-        selectWorkshopLabel.text = "Select Workshop"
+        workshopNumberLabel.text = "  Workshop \(indexPath!-1)".uppercased()
+        selectWorkshopLabel.text = "SELECT WORKSHOP"
     }
     
     func configureCell(){
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.frame.height / 15
+        self.layer.cornerRadius = 10
     }
 }

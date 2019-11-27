@@ -20,13 +20,10 @@ class TitleCollectionViewCell: UICollectionViewCell {
     }
     
     func setUpViews(){
-        titleLabel.text = "SCHEDULE"
-        titleLabel.textColor = .white
-        titleLabel.font =  UIFont(name: FontNames.playfairBold, size: 36)
+        titleLabel.text = "Schedule"
         descriptionLabel.text = "Get ready for an amazing day!"
-        descriptionLabel.textColor = .white
-        descriptionLabel.font = UIFont(name: FontNames.futuraBook, size: 16)
         encircleHouseImage.image = UIImage(named: "EncircleHouse")
+        encircleHouseImage.alpha = 0.75
     }
     
     func configureCell(height: CGFloat, width: CGFloat){

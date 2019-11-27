@@ -26,12 +26,12 @@ class SmallDetailCollectionViewCell: UICollectionViewCell {
         descriptionLabel.text = info.description
         arrowButton.image = UIImage(named: "arrow")
         
-        titleLabel.font = UIFont(name: FontNames.futuraBold, size: 20)
-        titleLabel.textColor = .black
-       
-        descriptionLabel.font = UIFont(name: FontNames.futuraBook, size: 12)
-        descriptionLabel.textColor = .black
-        
+//        titleLabel.font = UIFont(name: FontNames.futuraBold, size: 20)
+//        titleLabel.textColor = .black
+//       
+//        descriptionLabel.font = UIFont(name: FontNames.futuraBook, size: 12)
+//        descriptionLabel.textColor = .black
+//        
     }
     
     func configureCell(cell: SmallDetailCollectionViewCell) {

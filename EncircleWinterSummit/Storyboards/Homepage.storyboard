@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="595-Oj-yaa">
-                                <rect key="frame" x="0.0" y="6.6666666666666856" width="414" height="806.33333333333326"/>
+                                <rect key="frame" x="0.0" y="-83" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ikK-XJ-axv">
                                     <size key="itemSize" width="268" height="132"/>
@@ -39,13 +39,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zcn-4F-ILH">
                                                             <rect key="frame" x="8" y="31.666666666666671" width="251" height="69"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="255" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zI-7W-BhM">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="255" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3zI-7W-BhM" customClass="InfoCellTitleLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="251" height="36.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMM-B0-B4I">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lMM-B0-B4I" customClass="InfoCellDescriptionLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="48.666666666666657" width="251" height="20.333333333333329"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -101,13 +101,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="RIS-dm-8wa">
                                                             <rect key="frame" x="15" y="13.333333333333336" width="273" height="92.333333333333314"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Welcome To Encircle 2019!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPs-9B-R0B">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Welcome To Encircle 2019!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gPs-9B-R0B" customClass="HeaderCellTitleLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="273" height="42.666666666666664"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="We're excited to have you at this years encircle summit (formerly knowsoon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckY-Yk-iF7">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="We're excited to have you at this years encircle summit (formerly knowsoon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ckY-Yk-iF7" customClass="HeaderCellDescriptionLabel" customModule="EncircleWinterSummit" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="51.666666666666671" width="273" height="40.666666666666671"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -116,7 +116,7 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="RIS-dm-8wa" firstAttribute="width" secondItem="KIi-41-L9E" secondAttribute="width" multiplier="0.9" id="BUc-7Z-vZf"/>
                                                         <constraint firstItem="RIS-dm-8wa" firstAttribute="height" secondItem="KIi-41-L9E" secondAttribute="height" multiplier="0.7" id="Dec-Vs-PBr"/>
@@ -150,7 +150,7 @@
                         <constraints>
                             <constraint firstItem="VOb-JR-CaQ" firstAttribute="bottom" secondItem="595-Oj-yaa" secondAttribute="bottom" id="bbM-qp-Izz"/>
                             <constraint firstItem="595-Oj-yaa" firstAttribute="width" secondItem="LZI-h6-NpF" secondAttribute="width" id="fgj-aw-m9W"/>
-                            <constraint firstItem="595-Oj-yaa" firstAttribute="height" secondItem="LZI-h6-NpF" secondAttribute="height" multiplier="0.9" id="qan-6s-1ET"/>
+                            <constraint firstItem="595-Oj-yaa" firstAttribute="height" secondItem="LZI-h6-NpF" secondAttribute="height" id="qan-6s-1ET"/>
                             <constraint firstItem="595-Oj-yaa" firstAttribute="centerX" secondItem="VOb-JR-CaQ" secondAttribute="centerX" id="vQc-Hw-eTK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VOb-JR-CaQ"/>

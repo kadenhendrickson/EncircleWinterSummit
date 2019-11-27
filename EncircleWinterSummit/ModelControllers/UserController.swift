@@ -17,20 +17,24 @@ class UserController {
     var currentUser: User?
     
     //MARK - CRUD Functions
-    
-    func createUser(with firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track) {
-        let user = User(firstName: firstName, lastName: lastName, pronouns: pronouns, genderIdentity: genderIdentity, sexualOrientation: sexualOrientation, trackPreference: trackPreference)
+    func createUser(with firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track, email: String, age: String) {
+        let user = User(firstName: firstName, lastName: lastName, pronouns: pronouns, genderIdentity: genderIdentity, sexualOrientation: sexualOrientation, trackPreference: trackPreference, email: email, age: age)
         
         currentUser = user
         
-        switch trackPreference {
-        case .youth, .youngAdult:
-            currentUser?.schedule = [WorkshopController.youthIntroAndOutroWorkshops[0], nil, nil, nil, nil, WorkshopController.youthIntroAndOutroWorkshops[1], WorkshopController.youthIntroAndOutroWorkshops[2]]
-        default:
-            currentUser?.schedule = [WorkshopController.adultIntroAndOutroWorkshops[0], nil, nil, nil, WorkshopController.adultIntroAndOutroWorkshops[1], WorkshopController.adultIntroAndOutroWorkshops[2]] 
-        }
-        //saveToPersistentStore()
+        resetUserSchedule(track: trackPreference)
+        saveToPersistentStore()
     }
+    
+    func resetUserSchedule(track trackPreference: Track) {
+         switch trackPreference {
+         case .youth, .youngAdult:
+             currentUser?.schedule = [WorkshopController.youthIntroAndOutroWorkshops[0], nil, nil, nil, nil, WorkshopController.youthIntroAndOutroWorkshops[1], WorkshopController.youthIntroAndOutroWorkshops[2]]
+         default:
+             currentUser?.schedule = [WorkshopController.adultIntroAndOutroWorkshops[0], nil, nil, nil, WorkshopController.adultIntroAndOutroWorkshops[1], WorkshopController.adultIntroAndOutroWorkshops[2]]
+         }
+        saveToPersistentStore()
+     }
     
     func updateUser(with firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track){
         currentUser?.firstName = firstName
@@ -39,28 +43,30 @@ class UserController {
         currentUser?.genderIdentity = genderIdentity
         currentUser?.sexualOrientation = sexualOrientation
         currentUser?.trackPreference = trackPreference
-        //saveToPersistentStore()
+        saveToPersistentStore()
     }
     
     func setUserTrackPreference(track: Track){
         currentUser?.trackPreference = track
+        saveToPersistentStore()
     }
     
-    func addWorkshopToUserList(workshop: Workshop){
-         currentUser?.schedule.append(workshop)
-        //saveToPersistentStore()
+    func addWorkshopToUserList(at index: Int, workshop: Workshop){
+         currentUser?.schedule[index] = workshop
+        saveToPersistentStore()
       }
       
       func removeWorkshopFromUserList(workshop: Workshop){
           guard let indexOfWorkshopToRemove = currentUser?.schedule.firstIndex(of: workshop) else {return}
           currentUser?.schedule.remove(at: indexOfWorkshopToRemove)
-        //saveToPersistentStore()
+        saveToPersistentStore()
       }
+    
     
     func fileURL() -> URL {
           let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
           let documentDirectory = paths[0]
-          let filename = "encircleWinterSummit.json"
+          let filename = "encircleWinterSummit-1.json"
           let fullURL = documentDirectory.appendingPathComponent(filename)
           return fullURL
       }
@@ -77,7 +83,7 @@ class UserController {
           
       }
       
-      func loadFromPersistentStore() -> User {
+      func loadFromPersistentStore() -> User? {
           let jsonDecoder = JSONDecoder()
           do{
               let url = fileURL()
@@ -88,6 +94,6 @@ class UserController {
           } catch let e {
               print("Error my man: \(e)")
           }
-        return User(firstName: "", lastName: "", pronouns: .he, genderIdentity: "", sexualOrientation: "", trackPreference: .adult)
+        return nil
       }
 }

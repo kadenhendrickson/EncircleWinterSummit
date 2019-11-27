@@ -16,9 +16,11 @@ class User: Codable {
     var genderIdentity: String
     var sexualOrientation: String
     var trackPreference: Track
+    var email: String
+    var age: String
     var schedule: [Workshop?]
     
-    init(firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track,  schedule: [Workshop] = []) {
+    init(firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track, email: String, age: String,  schedule: [Workshop] = []) {
         self.firstName = firstName
         self.lastName = lastName
         self.pronouns = pronouns
@@ -26,6 +28,8 @@ class User: Codable {
         self.sexualOrientation = sexualOrientation
         self.trackPreference = trackPreference
         self.schedule = schedule
+        self.email = email
+        self.age = age
     }
 }
 
@@ -33,6 +37,7 @@ enum Pronoun: String, Codable {
     case they = "They/Them"
     case he = "He/Him/His"
     case she = "She/Her/Hers"
+    case other = "Other"
 }
 
 enum Track: String, Codable {

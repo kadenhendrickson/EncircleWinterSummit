@@ -10,19 +10,23 @@ import UIKit
 
 class WorkshopHeaderCollectionViewCell: UICollectionViewCell {
     
+    var workshop: Workshop? {
+        didSet{
+            setUpViews()
+        }
+    }
+    
     @IBOutlet weak var encircleHouseImage: UIImageView!
     @IBOutlet weak var workshopNumber: UILabel!
     @IBOutlet weak var timeFrameLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setUpViews()
-    }
-    
+
     func setUpViews() {
+        guard let workshop = workshop else {return}
         encircleHouseImage.image = UIImage(named: "EncircleHouse")
-        
+        encircleHouseImage.alpha = 0.75
+        workshopNumber.text = workshop.name
+        workshopNumber.textColor = .white
+        timeFrameLabel.text = workshop.time.toString()
+        timeFrameLabel.textColor = .white
     }
-    
-    
 }

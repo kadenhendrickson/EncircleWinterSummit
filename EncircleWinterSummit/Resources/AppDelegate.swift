@@ -16,12 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        UserController.shared.createUser(with: "Kaden", lastName: "Hendrickson", pronouns: .he, genderIdentity: "Male", sexualOrientation: "Straight", trackPreference: .youth)
+        UserController.shared.currentUser = UserController.shared.loadFromPersistentStore()
         
-        
-        
-        // Override point for customization after application launch.
-        return true
+        if(UserController.shared.currentUser == nil){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: "createUser") as? CreateUserViewController else {return false}
+            UIApplication.shared.windows[0].rootViewController = viewController
+        }
+    return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

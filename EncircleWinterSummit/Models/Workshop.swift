@@ -14,9 +14,9 @@ class Workshop: Codable {
     let time: Date
     let description: String
     let room: String
-    let map: Data
+    let map: String
     
-    init(name: String, title: String, time: Date, description: String, room: String, map: Data) {
+    init(name: String, title: String, time: Date, description: String, room: String, map: String) {
         self.name = name
         self.title = title
         self.time = time

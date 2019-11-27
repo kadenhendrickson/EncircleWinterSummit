@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol WorkshopListViewControllerDelegate: class {
+    func reloadData()
+}
+
 class WorkshopListViewController: UIViewController {
     
     var workshops: [Workshop]?
-    
+    weak var delegate: WorkshopListViewControllerDelegate?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -26,21 +30,10 @@ class WorkshopListViewController: UIViewController {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView.collectionViewLayout = layout
-        
-
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
 
@@ -53,13 +46,14 @@ extension WorkshopListViewController: UICollectionViewDelegate, UICollectionView
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(indexPath.row == 0) {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workshopHeaderCell", for: indexPath) as? WorkshopHeaderCollectionViewCell else {return UICollectionViewCell()}
-            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workshopHeaderCell", for: indexPath) as? WorkshopHeaderCollectionViewCell, let workshops = workshops else {return UICollectionViewCell()}
+            cell.workshop = workshops[0]
             return cell
             
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workshopCell", for: indexPath) as? WorkshopCollectionViewCell, let workshops = workshops else {return UICollectionViewCell()}
             cell.workshop = workshops[indexPath.row-1]
+            cell.delegate = self
             cell.backgroundColor = .white
             return cell
         }
@@ -78,6 +72,22 @@ extension WorkshopListViewController: UICollectionViewDelegateFlowLayout {
         }
         
     }
+}
+
+extension WorkshopListViewController: WorkshopCollectionViewCellDelegate {
+    func sessionInfoButtonTapped(workshop: Workshop) {
+        let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "workshopDetailVC") as? WorkshopDetailViewController else {return}
+        viewController.workshop = workshop
+        self.present(viewController, animated: true)
+    }
+    
+    func addToScheduleButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+        delegate?.reloadData()
+    }
+    
+    
 }
 
 

@@ -42,8 +42,6 @@ class FloorMapCollectionViewCell: UICollectionViewCell {
         viewMapButton.setTitle("View Map", for: .normal)
         viewMapButton.setTitleColor(.black, for: .normal)
         locationIconImage.image = UIImage(named: "locationIcon")
-        
-        
     }
     
     func configureCell(cell: FloorMapCollectionViewCell) {
