@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        UserController.shared.currentUser = UserController.shared.loadFromPersistentStore()
+        FirebaseApp.configure()
+        
+//        UserController.shared.currentUser = UserController.shared.loadFromPersistentStore()
         
         if(UserController.shared.currentUser == nil){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

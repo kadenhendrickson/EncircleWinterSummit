@@ -165,15 +165,15 @@ extension ScheduleViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(UserController.shared.currentUser?.trackPreference == Track.youth || UserController.shared.currentUser?.trackPreference == Track.youngAdult) {
             switch indexPath.row {
-            case 2,3,4,5 :
+            case 3,4,5 :
                 if(UserController.shared.currentUser?.schedule[indexPath.row-1] == nil){
                     let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
                     guard let controller = storyboard.instantiateViewController(withIdentifier: "workshopList") as? WorkshopListViewController else {return}
                     controller.delegate = self
                     if(UserController.shared.currentUser?.trackPreference == .youth){
-                        controller.workshops = WorkshopController.shared.youthWorkshops[indexPath.row - 2]
+                        controller.workshops = WorkshopController.shared.youthWorkshops[indexPath.row - 3]
                     } else{
-                        controller.workshops = WorkshopController.shared.youngAdultWokshops[indexPath.row - 2]
+                        controller.workshops = WorkshopController.shared.youngAdultWokshops[indexPath.row - 3]
                     }
                     self.present(controller, animated: true)
                 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class UserController {
     
@@ -15,50 +16,75 @@ class UserController {
     
     //MARK - Properties
     var currentUser: User?
+    lazy var db = Firestore.firestore()
     
     //MARK - CRUD Functions
     func createUser(with firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track, email: String, age: String) {
-        let user = User(firstName: firstName, lastName: lastName, pronouns: pronouns, genderIdentity: genderIdentity, sexualOrientation: sexualOrientation, trackPreference: trackPreference, email: email, age: age)
+        let user = User(firstName: firstName, lastName: lastName, pronouns: pronouns, genderIdentity: genderIdentity, sexualOrientation: sexualOrientation, trackPreference: trackPreference, email: email, age: age, userID: UUID().uuidString)
         
         currentUser = user
-        
         resetUserSchedule(track: trackPreference)
         saveToPersistentStore()
+        
+        //Create the User in Firestore
+        let userRef = db.collection("Users")
+        let userDictionary = user.dictionaryRepresentation
+        userRef.document(user.userID).setData(userDictionary) { (error) in
+            if(error != nil){
+                print(error?.localizedDescription)
+            }
+        }
+        
     }
     
     func resetUserSchedule(track trackPreference: Track) {
+        guard let currentUser = currentUser else {return}
          switch trackPreference {
          case .youth, .youngAdult:
-             currentUser?.schedule = [WorkshopController.youthIntroAndOutroWorkshops[0], nil, nil, nil, nil, WorkshopController.youthIntroAndOutroWorkshops[1], WorkshopController.youthIntroAndOutroWorkshops[2]]
+            currentUser.schedule = [WorkshopController.shared.youthIntroAndOutroWorkshops[0], WorkshopController.shared.youthIntroAndOutroWorkshops[1], nil, nil, nil, WorkshopController.shared.youthIntroAndOutroWorkshops[2], WorkshopController.shared.youthIntroAndOutroWorkshops[3]]
          default:
-             currentUser?.schedule = [WorkshopController.adultIntroAndOutroWorkshops[0], nil, nil, nil, WorkshopController.adultIntroAndOutroWorkshops[1], WorkshopController.adultIntroAndOutroWorkshops[2]]
+            currentUser.schedule = [WorkshopController.shared.adultIntroAndOutroWorkshops[0], nil, nil, nil, WorkshopController.shared.adultIntroAndOutroWorkshops[1], WorkshopController.shared.adultIntroAndOutroWorkshops[2]]
          }
+        db.collection("Users").document(currentUser.userID).updateData(["workshops" : FieldValue.delete()])
         saveToPersistentStore()
      }
     
     func updateUser(with firstName: String, lastName: String, pronouns: Pronoun, genderIdentity: String, sexualOrientation: String, trackPreference: Track){
-        currentUser?.firstName = firstName
-        currentUser?.lastName = lastName
-        currentUser?.pronouns = pronouns
-        currentUser?.genderIdentity = genderIdentity
-        currentUser?.sexualOrientation = sexualOrientation
-        currentUser?.trackPreference = trackPreference
+        guard let currentUser = currentUser else {return}
+        currentUser.firstName = firstName
+        currentUser.lastName = lastName
+        currentUser.pronouns = pronouns
+        currentUser.genderIdentity = genderIdentity
+        currentUser.sexualOrientation = sexualOrientation
+        currentUser.trackPreference = trackPreference
+        
+        let userDictionary = currentUser.dictionaryRepresentation
+        db.collection("Users").document(currentUser.userID).updateData(userDictionary)
         saveToPersistentStore()
     }
     
     func setUserTrackPreference(track: Track){
-        currentUser?.trackPreference = track
+        guard let currentUser = currentUser else {return}
+        currentUser.trackPreference = track
+
+        db.collection("Users").document(currentUser.userID).updateData(["trackPreference" : track.rawValue])
+        
         saveToPersistentStore()
     }
     
     func addWorkshopToUserList(at index: Int, workshop: Workshop){
-         currentUser?.schedule[index] = workshop
+        guard let currentUser = currentUser else {return}
+         currentUser.schedule[index] = workshop
+        db.collection("Users").document(currentUser.userID).updateData(["workshops" : FieldValue.arrayUnion([workshop.title])])
         saveToPersistentStore()
       }
       
       func removeWorkshopFromUserList(workshop: Workshop){
-          guard let indexOfWorkshopToRemove = currentUser?.schedule.firstIndex(of: workshop) else {return}
-          currentUser?.schedule.remove(at: indexOfWorkshopToRemove)
+          guard let indexOfWorkshopToRemove = currentUser?.schedule.firstIndex(of: workshop), let currentUser = currentUser else {return}
+          currentUser.schedule.remove(at: indexOfWorkshopToRemove)
+        //work on this
+//        db.collection("Users").document(currentUser.userID).updateData(["workshops" : FieldValue.delete()])
+        
         saveToPersistentStore()
       }
     
