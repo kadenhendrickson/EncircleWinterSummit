@@ -18,6 +18,7 @@ class HomePageViewController: UIViewController {
         collectionView.delegate = self
         self.view.backgroundColor = .black
         collectionView.backgroundColor = .black
+        determineNextWorkshop()
     
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +30,23 @@ class HomePageViewController: UIViewController {
         if let url = NSURL(string: urlString), !url.absoluteString!.isEmpty {
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
         }
+    }
+    
+    func determineNextWorkshop() -> Workshop? {
+        guard let workshops = UserController.shared.currentUser?.schedule else {return nil}
+        var soonestWorkshop: Workshop?
+        var shortestTime: TimeInterval = 1000000
+        for workshop in workshops {
+            if(workshop != nil){
+                let newTimeValue = Date().timeIntervalSince(Date())
+                if(newTimeValue < shortestTime && newTimeValue > 0) {
+                    shortestTime = newTimeValue
+                    soonestWorkshop  = workshop
+                }
+            }
+        }
+        print(soonestWorkshop?.title)
+       return soonestWorkshop
     }
 }
 

@@ -52,10 +52,10 @@ class FloorController {
     
     var podiumFloors: [Floor] {
         let building = Floor(name: "Podium Building", rooms: "If you're still lost, find an Encircle Volunteer who can direct you in the right direction.", map: UIImage(named: "Podium"))
-        let floor1 = Floor(name: "FLOOR 1", rooms: "1,2,3", map: nil)
-        let floor2 = Floor(name: "FLOOR 2", rooms: "1,2,3", map: nil)
-        let floor3 = Floor(name: "FLOOR 3", rooms: "1,2,3", map: nil)
-        let floor4 = Floor(name: "FLOOR 4", rooms: "1,2,3", map: nil)
+        let floor1 = Floor(name: "FLOOR 1", rooms: "110 - 143", map: UIImage(named: "Podium-1"))
+        let floor2 = Floor(name: "FLOOR 2", rooms: "210 - 246", map: UIImage(named: "Podium-2"))
+        let floor3 = Floor(name: "FLOOR 3", rooms: "310 - 334", map: UIImage(named: "Podium-3"))
+        let floor4 = Floor(name: "FLOOR 4", rooms: "410 - 443", map: UIImage(named: "Podium-4"))
 
         return [building, floor1, floor2, floor3, floor4]
     }

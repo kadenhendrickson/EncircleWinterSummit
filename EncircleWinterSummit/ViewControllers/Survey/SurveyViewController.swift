@@ -36,7 +36,7 @@ class SurveyViewController: UIViewController {
       }
     
     @IBAction func takeQuizButtonTapped(_ sender: Any) {
-        openURL(urlString: "https://stackoverflow.com/questions/39392939/how-to-add-a-hyperlink-button-on-ios-swift")
+        openURL(urlString: "https://encircletogether.org/summitsurvey")
     }
     
     func openURL(urlString: String!){

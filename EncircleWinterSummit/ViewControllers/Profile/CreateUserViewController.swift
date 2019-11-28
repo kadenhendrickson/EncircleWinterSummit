@@ -8,10 +8,9 @@
 
 import UIKit
 
-class CreateUserViewController: UIViewController{
+class CreateUserViewController: UIViewController, UITextFieldDelegate{
  
-    
-    var ages: [Int] = []
+    var defaultText: String?
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -28,8 +27,21 @@ class CreateUserViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
+        ageTextField.delegate = self
+        sexualOrientationTextField.delegate = self
+        genderIdentityTextField.delegate = self
         // Do any additional setup after loading the view.
-    }    
+        signUpButton.backgroundColor = .white
+        signUpButton.tintColor = .none
+        signUpButton.setTitle("Sign Up!", for: .normal)
+        signUpButton.setTitleColor(.black, for: .normal)
+        signUpButton.titleLabel?.font = UIFont(name: FontNames.futuraBook, size: 14)
+    }
+    
+    
     @IBAction func trackPreferenceSelectorButtonTapped(_ sender: UIButton) {
         trackPreferenceButtons.forEach { (button) in
             UIView.animate(withDuration: 0.3) {
@@ -75,11 +87,11 @@ class CreateUserViewController: UIViewController{
         guard let firstName = firstNameTextField.text, !firstName.isEmpty,
         let lastName = lastNameTextField.text, !lastName.isEmpty,
             let email = emailTextField.text,
-            let age = ageTextField.text,
-            let sexualOrientation = sexualOrientationTextField.text,
-            let genderIdentity = genderIdentityTextField.text,
-            let pronounString = pronounSelectorButton.titleLabel?.text,
-            let trackPreferenceString = trackPreferenceSelectorButton.titleLabel?.text else {return}
+            let age = ageTextField.text, !age.isEmpty,
+            let sexualOrientation = sexualOrientationTextField.text, !sexualOrientation.isEmpty,
+            let genderIdentity = genderIdentityTextField.text, !genderIdentity.isEmpty,
+            let pronounString = pronounSelectorButton.titleLabel?.text, pronounString != "Pronouns",
+            let trackPreferenceString = trackPreferenceSelectorButton.titleLabel?.text, trackPreferenceString != "Track Preference" else {alertUser(withMessage: "Please fill out all of the fields!"); return}
         
         let pronoun = determinePronouns(pronounString)
         let track = determineTrackPreference(trackPreferenceString)
@@ -138,5 +150,49 @@ class CreateUserViewController: UIViewController{
         ageTextField.resignFirstResponder()
         sexualOrientationTextField.resignFirstResponder()
         genderIdentityTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        defaultText = textField.text
+        textField.text = ""
+        if(textField.isEqual(genderIdentityTextField)){
+            UIView.animate(withDuration: 0.2) {
+            self.view.frame = CGRect(x: 0, y: -50, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            }
+        }
+        if(textField.isEqual(sexualOrientationTextField)){
+            UIView.animate(withDuration: 0.2) {
+            self.view.frame = CGRect(x: 0, y: -40, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            }
+        }
+    }
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    if(textField.text?.isEmpty ?? true) {
+            textField.text = defaultText
+        }
+    
+    if(textField.isEqual(genderIdentityTextField)){
+        UIView.animate(withDuration: 0.2) {
+        self.view.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        }
+    }
+    
+    if(textField.isEqual(sexualOrientationTextField)){
+               UIView.animate(withDuration: 0.2) {
+               self.view.frame = CGRect(x: 0, y: 40, width: self.view.frame.size.width, height: self.view.frame.size.height)
+               }
+           }
+    
+    }
+    
+    func alertUser(withMessage message: String) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true)
     }
 }

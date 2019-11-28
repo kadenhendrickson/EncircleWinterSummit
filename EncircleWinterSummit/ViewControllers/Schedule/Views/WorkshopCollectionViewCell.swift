@@ -27,6 +27,7 @@ class WorkshopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var workshopNameLabel: UILabel!
     @IBOutlet weak var workshopRoomLabel: UILabel!
     @IBOutlet weak var workshopDescriptionLabel: UILabel!
+    @IBOutlet weak var coloredBackgroundView: UIView!
     
     
     func setupViews(){
@@ -34,11 +35,29 @@ class WorkshopCollectionViewCell: UICollectionViewCell {
         workshopNameLabel.text = workshop.title.uppercased()
         workshopRoomLabel.text = "Room: \(workshop.room)"
         workshopDescriptionLabel.text = workshop.description
+        coloredBackgroundView.backgroundColor = setColorScheme()
     }
     
     func configureCell(){
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 10
+    }
+    
+    func setColorScheme() -> UIColor{
+        switch UserController.shared.currentUser?.trackPreference{
+        case .youth:
+            return .prideBlue
+        case .youngAdult:
+            return .prideRed
+        case .adult:
+            return .pridePink
+        case .parent:
+            return .pridePurple
+        case .educator:
+            return .prideGreen
+        default:
+            return .clear
+        }
     }
     
     

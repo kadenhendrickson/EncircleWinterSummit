@@ -18,8 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        
-        
+                
         UserController.shared.currentUser = UserController.shared.loadFromPersistentStore()
         
         if(UserController.shared.currentUser == nil){

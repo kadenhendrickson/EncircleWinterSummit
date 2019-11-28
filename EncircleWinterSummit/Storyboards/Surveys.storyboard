@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fz5-MV-lSs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Surveys" id="w8t-lP-yN8"/>
+                    <tabBarItem key="tabBarItem" title="Surveys" image="star-5-64" selectedImage="star-5-64" id="w8t-lP-yN8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="encircleHouseImage" destination="Uh8-gH-Kfo" id="vls-eg-zbU"/>
@@ -75,4 +75,7 @@
             <point key="canvasLocation" x="134.78260869565219" y="112.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star-5-64" width="32" height="32"/>
+    </resources>
 </document>

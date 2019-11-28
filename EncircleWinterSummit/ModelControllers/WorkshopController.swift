@@ -41,17 +41,17 @@ class WorkshopController  {
     
     //Intro and Outro Workshops
     var youthIntroAndOutroWorkshops: [Workshop] {
-        let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime , description: "(Overflow available in AlphaBravo)", room: "Main Area", map: "opening Map")
-        let firstWorkshop = Workshop(name: "Workshop 1", title: "An Introduction to Encircle", time: youthSharedSessionTime, description: "Learn about what Encircle can offer you, eat some treats and play some games.", room: "AlphaBravo", map: "Adobe-1")
-        let dinner = Workshop(name: "Dinner", title: "Dinner", time: dinnerSessionTime, description: "The moment you've all been waiting for!", room: "Main Area", map: "opening Map")
-        let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "(Overflow available in AlphaBravo)", room: "Main Area", map: "opening Map")
+        let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime , description: "", room: "Main Area", map: "opening Map")
+        let firstWorkshop = Workshop(name: "Workshop 1", title: "An Introduction to Encircle", time: youthSharedSessionTime, description: "Learn about what Encircle can offer you, eat some treats and play some games.", room: "Ankdkdy", map: "Adobe-1")
+        let dinner = Workshop(name: "Dinner", title: "Dinner and Show", time: dinnerSessionTime, description: "The moment you've all been waiting for!", room: "TBD", map: "opening Map")
+        let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "", room: "Main Area", map: "opening Map")
         return [openeingSession,firstWorkshop, dinner, closingSession]
     }
     
     var adultIntroAndOutroWorkshops: [Workshop] {
-       let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime, description: "(Overflow available in AlphaBravo)", room: "Main Area", map: "opening Map")
-          let dinner = Workshop(name: "Dinner", title: "Dinner", time: dinnerSessionTime, description: "The moment you've all been waiting for!", room: "Main Area", map: "opening Map")
-          let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "(Overflow available in AlphaBravo)", room: "Main Area", map: "opening Map")
+       let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime, description: "", room: "Main Area", map: "opening Map")
+          let dinner = Workshop(name: "Dinner", title: "Dinner and Show", time: dinnerSessionTime, description: "The moment you've all been waiting for!", room: "Main Area", map: "opening Map")
+          let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "", room: "TBD", map: "opening Map")
           return [openeingSession, dinner, closingSession]
     }
     
@@ -68,7 +68,7 @@ class WorkshopController  {
             let workshop7 = Workshop(name: "Workshop 2", title: "Blue Sky", time: sessionOneTime, description: "Clear away cloudy days by putting pencil to paper. This workshop provides a safe space to find your voice through writing. ", room: "Miyamoto", map: "Adobe-4")
             let workshop8 = Workshop(name: "Workshop 2", title: "Friendship Circles", time: sessionOneTime, description: "FIND SUPPORT, VALIDATION, AND LEARN FROM EACH OTHER’S EXPERIENCES", room: "Hoff/Cailiau/Torvalds/Geschke", map: "Adobe-4")
             let workshop9 = Workshop(name: "Workshop 2", title: "Rainbow Mutual", time: sessionOneTime, description: "Come make Rainbow Pins with your friends!", room: "Gould/Bell", map: "Adobe-3")
-            let workshop10 = Workshop(name: "Workshop 2", title: "Gender Q&A Panel", time: sessionOneTime, description: "A panel of transgender, gender non-conforming, and a partner of someone who is will be opening up about their identities, their experiences, and their lives. Come listen to them tell their stories, and ask questions. Learn about gender identity, and what that can look like in a variety of ways.", room: "Newton", map: "Adobe-3")
+            let workshop10 = Workshop(name: "Workshop 2", title: "Tools to Thrive: Gender Q&A Panel", time: sessionOneTime, description: "A panel of transgender, gender non-conforming, and a partner of someone who is will be opening up about their identities, their experiences, and their lives. Come listen to them tell their stories, and ask questions. Learn about gender identity, and what that can look like in a variety of ways.", room: "Newton", map: "Adobe-3")
             let workshop11 = Workshop(name: "Workshop 1", title: "Tools to Thrive", time: sessionOneTime, description: "Join Dolls of Hope in a discussion meant to facilitate growth and discovery. This workshop allows for an intimate setting where members can talk openly about the challenges faced by LGBTQ+ people and their families and friends and share tools they've used to overcome these challenges.", room: "Bohr", map: "Adobe-3")
             return[workshop1,workshop2,workshop3,workshop4,workshop5,workshop6,workshop7,workshop8,workshop9,workshop10,workshop11]
         }
