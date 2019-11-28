@@ -84,12 +84,12 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        guard let firstName = firstNameTextField.text, !firstName.isEmpty,
-        let lastName = lastNameTextField.text, !lastName.isEmpty,
+        guard let firstName = firstNameTextField.text, firstName != "First Name",
+        let lastName = lastNameTextField.text, lastName != "Last Name",
             let email = emailTextField.text,
-            let age = ageTextField.text, !age.isEmpty,
-            let sexualOrientation = sexualOrientationTextField.text, !sexualOrientation.isEmpty,
-            let genderIdentity = genderIdentityTextField.text, !genderIdentity.isEmpty,
+            let age = ageTextField.text, age != "Age",
+            let sexualOrientation = sexualOrientationTextField.text, sexualOrientation != "Sexual Orientation",
+            let genderIdentity = genderIdentityTextField.text, genderIdentity != "Gender Identity",
             let pronounString = pronounSelectorButton.titleLabel?.text, pronounString != "Pronouns",
             let trackPreferenceString = trackPreferenceSelectorButton.titleLabel?.text, trackPreferenceString != "Track Preference" else {alertUser(withMessage: "Please fill out all of the fields!"); return}
         

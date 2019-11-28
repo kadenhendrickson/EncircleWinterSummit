@@ -11,6 +11,7 @@ import UIKit
 class HomePageViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var nextUpWorkshop: Workshop?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,7 @@ class HomePageViewController: UIViewController {
         collectionView.delegate = self
         self.view.backgroundColor = .black
         collectionView.backgroundColor = .black
-        determineNextWorkshop()
+//        determineNextWorkshop()
     
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -32,22 +33,30 @@ class HomePageViewController: UIViewController {
         }
     }
     
-    func determineNextWorkshop() -> Workshop? {
-        guard let workshops = UserController.shared.currentUser?.schedule else {return nil}
-        var soonestWorkshop: Workshop?
-        var shortestTime: TimeInterval = 1000000
-        for workshop in workshops {
-            if(workshop != nil){
-                let newTimeValue = Date().timeIntervalSince(Date())
-                if(newTimeValue < shortestTime && newTimeValue > 0) {
-                    shortestTime = newTimeValue
-                    soonestWorkshop  = workshop
-                }
-            }
-        }
-        print(soonestWorkshop?.title)
-       return soonestWorkshop
-    }
+//    func determineNextWorkshop() -> Workshop? {
+//        guard let currentUser = UserController.shared.currentUser else{return nil}
+//        let currentDate = Date()
+//
+//        switch currentUser.trackPreference{
+//        case .youth:
+//            currentUser.schedule.forEach { (workshop) in
+//                if let workshop = workshop {
+//
+//                }
+//            }
+//        case .youngAdult:
+//        case .adult:
+//        case .parent:
+//        case .educator:
+//        }
+//       }
+    
+//    func determineNextWorkshop()  -> Workshop? {
+//        guard let currentUser = UserController.shared.currentUser else {return nil}
+//        currentUser.schedule.sort { (w1, w2) -> Bool in
+//            <#code#>
+//        }
+//    }
 }
 
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
