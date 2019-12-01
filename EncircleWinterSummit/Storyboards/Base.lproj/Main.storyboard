@@ -7,12 +7,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura Book font.ttf">
+            <string>FuturaBT-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--baseTabBar-->
         <scene sceneID="tcU-YT-YP5">
             <objects>
                 <tabBarController storyboardIdentifier="baseTabBar" title="baseTabBar" id="diD-iq-Cm2" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="IxQ-aE-21S">
+                    <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="IxQ-aE-21S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,7 +40,7 @@
         <scene sceneID="AWC-To-BBX">
             <objects>
                 <viewControllerPlaceholder storyboardName="Homepage" referencedIdentifier="homepage" id="60d-eK-lcv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Homepage" id="RoU-ff-ACk">
+                    <tabBarItem key="tabBarItem" title="Homepage" image="homeTab" selectedImage="homeTab" id="RoU-ff-ACk">
                         <color key="badgeColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -71,59 +76,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3I2-Vk-UVD">
-                                <rect key="frame" x="52" y="209.5" width="310.5" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt0-YV-HBX">
+                                <rect key="frame" x="108" y="710" width="198" height="30"/>
+                                <state key="normal" title="Sign up"/>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="eAy-CT-q6c"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name*" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3I2-Vk-UVD" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                <rect key="frame" x="52" y="232" width="310.5" height="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name*" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-CB-Y7b" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                <rect key="frame" x="52" y="291" width="310.5" height="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sexual Orientation" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zdh-kz-ybO" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                <rect key="frame" x="52" y="463" width="310.5" height="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-CB-Y7b">
-                                <rect key="frame" x="52" y="255" width="310.5" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUc-Tx-Amc" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                <rect key="frame" x="52" y="350" width="310.5" height="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Gender Identity" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggg-pn-Or8" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                <rect key="frame" x="52" y="522" width="310.5" height="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sexual Orientation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zdh-kz-ybO">
-                                <rect key="frame" x="52" y="445" width="310.5" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUc-Tx-Amc">
-                                <rect key="frame" x="52" y="300" width="310.5" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender Identity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggg-pn-Or8">
-                                <rect key="frame" x="52" y="490.5" width="310.5" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENCIRCLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW4-Wd-t1K">
-                                <rect key="frame" x="129.5" y="61" width="155" height="59"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WINTER SUMMIT SIGN UP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-pL-tob">
-                                <rect key="frame" x="104.5" y="125.5" width="205" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="104.5" y="170.5" width="205" height="21"/>
+                                <fontDescription key="fontDescription" name="FuturaBT-Book" family="Futura" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKZ-5M-QBE">
-                                <rect key="frame" x="52" y="400" width="310.5" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Age" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKZ-5M-QBE" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
+                                <rect key="frame" x="52" y="409" width="310.5" height="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us a little about yourself!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBZ-PR-DEn">
-                                <rect key="frame" x="52" y="374.5" width="310.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qyT-D7-SXs">
-                                <rect key="frame" x="52" y="580.5" width="310.5" height="35"/>
+                                <rect key="frame" x="52" y="622" width="310.5" height="35"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePa-jr-cRh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePa-jr-cRh" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="YmX-z5-VfV"/>
                                         </constraints>
@@ -132,8 +139,9 @@
                                             <action selector="trackPreferenceSelectorButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="cFz-Fq-3qk"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ0-EU-FJJ">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ0-EU-FJJ" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="bOd-Pe-4GM"/>
                                         </constraints>
@@ -142,8 +150,9 @@
                                             <action selector="trackButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="GuB-3p-EHQ"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyU-GF-A4M">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyU-GF-A4M" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Ooh-3U-XWh"/>
                                         </constraints>
@@ -152,8 +161,9 @@
                                             <action selector="trackButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="6os-8c-gXW"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7v-YN-FOH">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7v-YN-FOH" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="QIw-Yu-FXU"/>
                                         </constraints>
@@ -162,8 +172,9 @@
                                             <action selector="trackButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="gaO-x3-H6g"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWs-4r-cPB">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWs-4r-cPB" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="g1n-BP-QMl"/>
                                         </constraints>
@@ -172,8 +183,9 @@
                                             <action selector="trackButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="hg2-8g-Sp5"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64t-kk-9Yg">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64t-kk-9Yg" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="jkC-0e-HiB"/>
                                         </constraints>
@@ -185,10 +197,11 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="chi-3P-mJU">
-                                <rect key="frame" x="52" y="536.5" width="310.5" height="35"/>
+                                <rect key="frame" x="52" y="576" width="310.5" height="35"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-EZ-cZU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-EZ-cZU" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="CTr-1Z-ur0"/>
                                         </constraints>
@@ -197,8 +210,9 @@
                                             <action selector="pronounSelectorButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="yJm-yA-9uf"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-Cu-6Rj">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-Cu-6Rj" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="JUI-sz-49K"/>
                                         </constraints>
@@ -207,8 +221,9 @@
                                             <action selector="pronounButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="r07-Ht-ddW"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="in6-F1-Agc">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="in6-F1-Agc" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="50a-PX-dBG"/>
                                         </constraints>
@@ -217,8 +232,9 @@
                                             <action selector="pronounButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="WBY-PW-aWM"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRV-4A-gvk">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRV-4A-gvk" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="SJI-lN-VFd"/>
                                         </constraints>
@@ -227,8 +243,9 @@
                                             <action selector="pronounButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="a3M-pU-hcU"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-vZ-zfd">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-vZ-zfd" customClass="ProfileDropDowns" customModule="EncircleWinterSummit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310.5" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="k46-J7-ic9"/>
                                         </constraints>
@@ -239,63 +256,147 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt0-YV-HBX">
-                                <rect key="frame" x="108" y="710" width="198" height="30"/>
-                                <state key="normal" title="Sign up"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Ed-ix-K0i">
+                                <rect key="frame" x="41.5" y="68.5" width="310.5" height="89.5"/>
+                            </imageView>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9B-3f-OEz">
+                                <rect key="frame" x="52" y="265.5" width="310.5" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Of-iE-Ur1">
+                                <rect key="frame" x="52" y="325.5" width="310.5" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGP-Le-xeA">
+                                <rect key="frame" x="52" y="384.5" width="310.5" height="1.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jd0-g8-cQl">
+                                <rect key="frame" x="52" y="442" width="310.5" height="1.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-s8-e76">
+                                <rect key="frame" x="52" y="498.5" width="310.5" height="1.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpf-Yk-3aG">
+                                <rect key="frame" x="52" y="560" width="310.5" height="1.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortDownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-Pt-DLJ">
+                                <rect key="frame" x="322.5" y="585" width="17.5" height="17.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X7d-Pt-DLJ" secondAttribute="height" multiplier="1:1" id="jhF-nn-M1l"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortDownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="mpm-ip-2Hk">
+                                <rect key="frame" x="322.5" y="631" width="17.5" height="17.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text fields marked with an * are required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ww-Y3-h0K">
+                                <rect key="frame" x="52" y="198" width="248" height="21"/>
+                                <fontDescription key="fontDescription" name="FuturaBT-Book" family="Futura" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPo-hD-pMN">
+                                <rect key="frame" x="163" y="778" width="88" height="30"/>
+                                <state key="normal" title="Skip sign up ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="signUpButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="eAy-CT-q6c"/>
+                                    <action selector="skipSignUpButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="4hH-em-eyq"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="UGP-Le-xeA" firstAttribute="height" secondItem="DUc-Tx-Amc" secondAttribute="height" multiplier="0.05" id="2y5-OY-DeE"/>
+                            <constraint firstItem="3Ed-ix-K0i" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" multiplier="0.95" id="6Dg-tv-tsG"/>
                             <constraint firstItem="Vt0-YV-HBX" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="7CS-nW-ry0"/>
+                            <constraint firstItem="6Of-iE-Ur1" firstAttribute="centerY" secondItem="YY2-CB-Y7b" secondAttribute="centerY" multiplier="1.06" id="7Fz-vr-PNd"/>
                             <constraint firstItem="Ggg-pn-Or8" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="83G-eW-p3R"/>
-                            <constraint firstItem="DUc-Tx-Amc" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.7" id="9OY-ao-RRj"/>
+                            <constraint firstItem="DUc-Tx-Amc" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.81" id="9OY-ao-RRj"/>
+                            <constraint firstItem="6Of-iE-Ur1" firstAttribute="height" secondItem="YY2-CB-Y7b" secondAttribute="height" multiplier="0.05" id="AM5-KX-KFe"/>
                             <constraint firstItem="DUc-Tx-Amc" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="BTa-HF-5WH"/>
-                            <constraint firstItem="YY2-CB-Y7b" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.6" id="Crx-Dw-vYt"/>
-                            <constraint firstItem="dKZ-5M-QBE" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.92" id="FDE-dZ-UeX"/>
-                            <constraint firstItem="Ggg-pn-Or8" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.12" id="FRz-oi-nUr"/>
+                            <constraint firstItem="9Ww-Y3-h0K" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.46" id="CHU-GW-yiN"/>
+                            <constraint firstItem="YY2-CB-Y7b" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.68" id="Crx-Dw-vYt"/>
+                            <constraint firstItem="Jd0-g8-cQl" firstAttribute="width" secondItem="dKZ-5M-QBE" secondAttribute="width" id="DRx-2Z-8ct"/>
+                            <constraint firstItem="dKZ-5M-QBE" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.94" id="FDE-dZ-UeX"/>
+                            <constraint firstItem="Ggg-pn-Or8" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.19" id="FRz-oi-nUr"/>
+                            <constraint firstItem="3Ed-ix-K0i" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.1" id="FtU-T3-gHB"/>
+                            <constraint firstItem="3Ed-ix-K0i" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="GKt-Ni-cnp"/>
+                            <constraint firstItem="mpm-ip-2Hk" firstAttribute="width" secondItem="mpm-ip-2Hk" secondAttribute="height" multiplier="1:1" id="GxN-Cc-0d0"/>
+                            <constraint firstItem="UGP-Le-xeA" firstAttribute="centerY" secondItem="DUc-Tx-Amc" secondAttribute="centerY" multiplier="1.05" id="I3n-C9-e5u"/>
+                            <constraint firstItem="9Ww-Y3-h0K" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" multiplier="0.85" id="JL2-AD-osj"/>
+                            <constraint firstItem="bpf-Yk-3aG" firstAttribute="centerX" secondItem="Ggg-pn-Or8" secondAttribute="centerX" id="KvS-it-U2S"/>
                             <constraint firstItem="3I2-Vk-UVD" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0379464" id="LKV-Xt-C7e"/>
+                            <constraint firstItem="x9B-3f-OEz" firstAttribute="width" secondItem="3I2-Vk-UVD" secondAttribute="width" id="Mxr-Dx-Tmg"/>
                             <constraint firstItem="Zdh-kz-ybO" firstAttribute="height" secondItem="dKZ-5M-QBE" secondAttribute="height" id="N6X-na-NtF"/>
-                            <constraint firstItem="chi-3P-mJU" firstAttribute="top" secondItem="Ggg-pn-Or8" secondAttribute="bottom" constant="12" id="Nsu-sE-qbu"/>
+                            <constraint firstItem="6Of-iE-Ur1" firstAttribute="width" secondItem="YY2-CB-Y7b" secondAttribute="width" id="NGY-ET-3YS"/>
+                            <constraint firstItem="chi-3P-mJU" firstAttribute="top" secondItem="Ggg-pn-Or8" secondAttribute="bottom" constant="20" id="Nsu-sE-qbu"/>
+                            <constraint firstItem="UGP-Le-xeA" firstAttribute="centerX" secondItem="DUc-Tx-Amc" secondAttribute="centerX" id="OiW-XQ-XPY"/>
+                            <constraint firstItem="BPo-hD-pMN" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0334821" id="Osa-rf-Mq1"/>
                             <constraint firstItem="chi-3P-mJU" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="PQX-He-TEc"/>
-                            <constraint firstItem="Z5F-pL-tob" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.3" id="Qka-cB-ZmO"/>
+                            <constraint firstItem="x9B-3f-OEz" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="QI0-RJ-FGc"/>
+                            <constraint firstItem="Z5F-pL-tob" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.4" id="Qka-cB-ZmO"/>
                             <constraint firstItem="Z5F-pL-tob" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.495169" id="Qls-yL-qCJ"/>
                             <constraint firstItem="DUc-Tx-Amc" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="Reg-cT-fXq"/>
-                            <constraint firstItem="eW4-Wd-t1K" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.2" id="SQs-Jk-fLL"/>
                             <constraint firstItem="Z5F-pL-tob" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0234375" id="STf-mG-YYN"/>
-                            <constraint firstItem="MBZ-PR-DEn" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="Suz-PU-0px"/>
+                            <constraint firstItem="3Ed-ix-K0i" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.25" id="Sbv-zd-FeP"/>
+                            <constraint firstItem="mpm-ip-2Hk" firstAttribute="height" secondItem="ePa-jr-cRh" secondAttribute="height" multiplier="0.5" id="T1Z-Pp-fyo"/>
+                            <constraint firstItem="bpf-Yk-3aG" firstAttribute="width" secondItem="Ggg-pn-Or8" secondAttribute="width" id="U01-6i-hdl"/>
                             <constraint firstItem="qyT-D7-SXs" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="Uub-GD-y0R"/>
                             <constraint firstItem="Z5F-pL-tob" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="VBT-V7-2By"/>
                             <constraint firstItem="YY2-CB-Y7b" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0379464" id="VRk-0w-rbm"/>
+                            <constraint firstItem="bpf-Yk-3aG" firstAttribute="height" secondItem="Ggg-pn-Or8" secondAttribute="height" multiplier="0.05" id="VSS-FN-wVD"/>
                             <constraint firstItem="Ggg-pn-Or8" firstAttribute="width" secondItem="dKZ-5M-QBE" secondAttribute="width" id="VTK-CU-R7D"/>
-                            <constraint firstItem="3I2-Vk-UVD" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.5" id="WFP-lf-5pc"/>
-                            <constraint firstItem="eW4-Wd-t1K" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.374396" id="X5w-LB-IsS"/>
+                            <constraint firstItem="3I2-Vk-UVD" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.55" id="WFP-lf-5pc"/>
+                            <constraint firstItem="x9B-3f-OEz" firstAttribute="height" secondItem="3I2-Vk-UVD" secondAttribute="height" multiplier="0.05" id="XrX-hC-cXB"/>
+                            <constraint firstItem="X7d-Pt-DLJ" firstAttribute="centerX" secondItem="Qjb-EZ-cZU" secondAttribute="centerX" multiplier="1.8" id="Y1E-Th-H90"/>
+                            <constraint firstItem="a3u-s8-e76" firstAttribute="centerY" secondItem="Zdh-kz-ybO" secondAttribute="centerY" multiplier="1.04" id="YKF-jC-V9a"/>
                             <constraint firstItem="dKZ-5M-QBE" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="YpW-rC-O01"/>
+                            <constraint firstItem="mpm-ip-2Hk" firstAttribute="centerY" secondItem="ePa-jr-cRh" secondAttribute="centerY" id="aoH-AH-HTq"/>
                             <constraint firstItem="Vt0-YV-HBX" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.6" id="bBI-Kz-RYK"/>
-                            <constraint firstItem="Zdh-kz-ybO" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.02" id="d10-pS-exs"/>
-                            <constraint firstItem="MBZ-PR-DEn" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0234375" id="e3b-Op-gnU"/>
+                            <constraint firstItem="BPo-hD-pMN" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="cl0-q8-zPN"/>
+                            <constraint firstItem="a3u-s8-e76" firstAttribute="centerX" secondItem="Zdh-kz-ybO" secondAttribute="centerX" id="csK-EL-8Uz"/>
+                            <constraint firstItem="Zdh-kz-ybO" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.06" id="d10-pS-exs"/>
+                            <constraint firstItem="Jd0-g8-cQl" firstAttribute="centerX" secondItem="dKZ-5M-QBE" secondAttribute="centerX" id="dcr-vr-QgV"/>
+                            <constraint firstItem="bpf-Yk-3aG" firstAttribute="centerY" secondItem="Ggg-pn-Or8" secondAttribute="centerY" multiplier="1.04" id="ewi-pZ-tgP"/>
+                            <constraint firstItem="X7d-Pt-DLJ" firstAttribute="height" secondItem="Qjb-EZ-cZU" secondAttribute="height" multiplier="0.5" id="gkc-k8-Kk3"/>
+                            <constraint firstItem="9Ww-Y3-h0K" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0234375" id="h1V-mH-kOG"/>
                             <constraint firstItem="Zdh-kz-ybO" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="hKD-Rg-tU8"/>
+                            <constraint firstItem="a3u-s8-e76" firstAttribute="height" secondItem="Zdh-kz-ybO" secondAttribute="height" multiplier="0.05" id="hW5-6m-uqR"/>
                             <constraint firstItem="Ggg-pn-Or8" firstAttribute="height" secondItem="dKZ-5M-QBE" secondAttribute="height" id="hYt-yQ-Cie"/>
                             <constraint firstItem="Vt0-YV-HBX" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.478261" id="iXb-vG-3IZ"/>
-                            <constraint firstItem="eW4-Wd-t1K" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="m97-8W-07K"/>
-                            <constraint firstItem="MBZ-PR-DEn" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="oYc-21-64v"/>
+                            <constraint firstItem="x9B-3f-OEz" firstAttribute="centerY" secondItem="3I2-Vk-UVD" secondAttribute="centerY" multiplier="1.07" id="iad-nD-2PP"/>
+                            <constraint firstItem="BPo-hD-pMN" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.75" id="mdQ-sl-Dz7"/>
+                            <constraint firstItem="a3u-s8-e76" firstAttribute="width" secondItem="Zdh-kz-ybO" secondAttribute="width" id="nSj-hG-gWv"/>
                             <constraint firstItem="DUc-Tx-Amc" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0379464" id="okR-Jj-q7J"/>
+                            <constraint firstItem="6Of-iE-Ur1" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="pJU-2C-cpK"/>
                             <constraint firstItem="dKZ-5M-QBE" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="pnd-Mk-qKO"/>
-                            <constraint firstItem="eW4-Wd-t1K" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0658482" id="qil-gW-BqY"/>
-                            <constraint firstItem="MBZ-PR-DEn" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.85" id="t5w-23-d5F"/>
+                            <constraint firstItem="mpm-ip-2Hk" firstAttribute="centerX" secondItem="ePa-jr-cRh" secondAttribute="centerX" multiplier="1.8" id="rEf-ut-I7U"/>
                             <constraint firstItem="chi-3P-mJU" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="taU-XP-itN"/>
                             <constraint firstItem="Vt0-YV-HBX" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0334821" id="tns-Lf-JlK"/>
+                            <constraint firstItem="9Ww-Y3-h0K" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.6" id="trg-io-3AP"/>
                             <constraint firstItem="dKZ-5M-QBE" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0379464" id="uwB-P2-Li2"/>
                             <constraint firstItem="3I2-Vk-UVD" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="vP4-fx-MPG"/>
                             <constraint firstItem="qyT-D7-SXs" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="vnf-Ra-EWq"/>
+                            <constraint firstItem="UGP-Le-xeA" firstAttribute="width" secondItem="DUc-Tx-Amc" secondAttribute="width" id="wLu-aq-8i1"/>
                             <constraint firstItem="3I2-Vk-UVD" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="wb6-cM-zwa"/>
                             <constraint firstItem="YY2-CB-Y7b" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="wiF-u6-FtL"/>
+                            <constraint firstItem="Jd0-g8-cQl" firstAttribute="centerY" secondItem="dKZ-5M-QBE" secondAttribute="centerY" multiplier="1.04" id="wvF-bo-wmJ"/>
+                            <constraint firstItem="Jd0-g8-cQl" firstAttribute="height" secondItem="dKZ-5M-QBE" secondAttribute="height" multiplier="0.05" id="xhS-wI-WEh"/>
                             <constraint firstItem="Zdh-kz-ybO" firstAttribute="width" secondItem="dKZ-5M-QBE" secondAttribute="width" id="ySm-ev-V16"/>
-                            <constraint firstItem="qyT-D7-SXs" firstAttribute="top" secondItem="Ggg-pn-Or8" secondAttribute="bottom" constant="56" id="yXe-rD-g2Q"/>
+                            <constraint firstItem="qyT-D7-SXs" firstAttribute="top" secondItem="Ggg-pn-Or8" secondAttribute="bottom" constant="66" id="yXe-rD-g2Q"/>
                             <constraint firstItem="YY2-CB-Y7b" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="zcI-sc-tMh"/>
+                            <constraint firstItem="X7d-Pt-DLJ" firstAttribute="centerY" secondItem="Qjb-EZ-cZU" secondAttribute="centerY" id="zt1-Ki-W3f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QNT-t9-j3d"/>
                         <connections>
@@ -353,4 +454,9 @@
             <point key="canvasLocation" x="-1009" y="300"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homeTab" width="128" height="128"/>
+        <image name="logo" width="509" height="200"/>
+        <image name="sortDownArrow" width="64" height="64"/>
+    </resources>
 </document>

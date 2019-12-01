@@ -6,7 +6,7 @@
 //  Copyright © 2019 DevMountain. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Date{
     
@@ -21,4 +21,10 @@ extension Date{
 
 extension Notification.Name {
     static let appLaunched = Notification.Name("appLaunched")
+}
+
+extension UIView {
+    func addCornerRadius(_  radius: CGFloat = 4) {
+        self.layer.cornerRadius = radius
+    }
 }

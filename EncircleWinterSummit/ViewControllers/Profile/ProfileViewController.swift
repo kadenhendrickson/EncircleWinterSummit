@@ -14,11 +14,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var genderIdentityTextField: UITextField!
     @IBOutlet weak var sexualOrientationTextField: UITextField!
-    @IBOutlet weak var trackPreferencesButton: UIButton!
     @IBOutlet weak var editFIrstNameButton: UIButton!
     @IBOutlet weak var editLastNameButton: UIButton!
     @IBOutlet weak var editGenderButton: UIButton!
     @IBOutlet weak var editSexualOrientationButton: UIButton!
+    @IBOutlet weak var underPronounView: UIView!
     
     @IBOutlet weak var preferredPronounButton: UIButton!
     @IBOutlet var pronounButtons: [UIButton]!
@@ -38,11 +38,15 @@ class ProfileViewController: UIViewController {
           tabBarController?.tabBar.barTintColor = .black
       }
     
+    @IBAction func resignKeyboards(_ sender: Any) {
+        resignAllTextFields()
+    }
     @IBAction func preferredPronounButtonTapped(_ sender: UIButton) {
+        underPronounView.isHidden = !underPronounView.isHidden
         print("FUCK")
         pronounButtons.forEach { (button) in
-            if(button.titleLabel?.text != self.preferredPronounButton.titleLabel?.text){
-                UIView.animate(withDuration: 0.3) {
+             UIView.animate(withDuration: 0.3) {
+                if(button.titleLabel?.text != self.preferredPronounButton.titleLabel?.text){
                     button.isHidden = !button.isHidden
                     self.view.layoutIfNeeded()
                 }
@@ -55,6 +59,8 @@ class ProfileViewController: UIViewController {
         pronounButtons.forEach { (button) in
             UIView.animate(withDuration: 0.3) {
                 button.isHidden = true
+                self.underPronounView.isHidden = false
+
             }
         }
     }
@@ -68,7 +74,7 @@ class ProfileViewController: UIViewController {
             edit(textField: lastNameTextField)
         case editGenderButton:
             edit(textField: genderIdentityTextField)
-        case sexualOrientationTextField:
+        case editSexualOrientationButton:
             edit(textField: sexualOrientationTextField)
         default:
             print("huh")
@@ -85,12 +91,13 @@ class ProfileViewController: UIViewController {
         lastNameTextField.text = user.lastName
         formatInitialTextField(textField: lastNameTextField)
         preferredPronounButton.setTitle(user.pronouns.rawValue, for: .normal)
-        preferredPronounButton.setTitleColor(.white, for: .normal)
+//        preferredPronounButton.setTitleColor(.white, for: .normal)
+//        preferredPronounButton.titleLabel?.font = UIFont(name: FontNames.futuraBook, size: 16)
+        preferredPronounButton.contentHorizontalAlignment = .left
         genderIdentityTextField.text = user.genderIdentity
         formatInitialTextField(textField: genderIdentityTextField)
         sexualOrientationTextField.text = user.sexualOrientation
         formatInitialTextField(textField: sexualOrientationTextField)
-        trackPreferencesButton.setTitle(user.trackPreference.rawValue, for: .normal)
         
         
     }
@@ -113,6 +120,12 @@ class ProfileViewController: UIViewController {
         print("\(textField) is enabled: \(textField.isEnabled)")
     }
     
+    func resignAllTextFields(){
+        firstNameTextField.resignFirstResponder()
+        lastNameTextField.resignFirstResponder()
+        genderIdentityTextField.resignFirstResponder()
+        sexualOrientationTextField.resignFirstResponder()
+    }
     
 
     /*

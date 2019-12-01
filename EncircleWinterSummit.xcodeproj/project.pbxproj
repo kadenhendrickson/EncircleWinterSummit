@@ -34,6 +34,9 @@
 		DCB9651F237B1CDC00DC8D17 /* FloorMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB9651E237B1CDC00DC8D17 /* FloorMapCollectionViewCell.swift */; };
 		DCB96523237B1D7D00DC8D17 /* MapHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB96522237B1D7D00DC8D17 /* MapHeaderCollectionViewCell.swift */; };
 		DCB96525237B237A00DC8D17 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB96524237B237A00DC8D17 /* MapsViewController.swift */; };
+		DCC2DF61238E89C10047B703 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2DF60238E89C10047B703 /* ProfileHeader.swift */; };
+		DCC2DF63238E8BBD0047B703 /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2DF62238E8BBD0047B703 /* ProfileTextField.swift */; };
+		DCC2DF65238E913E0047B703 /* ProfileDropDowns.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2DF64238E913E0047B703 /* ProfileDropDowns.swift */; };
 		DCC361A12389C349003109CF /* WorkshopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361A02389C349003109CF /* WorkshopDetailViewController.swift */; };
 		DCC361A42389C439003109CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361A32389C439003109CF /* Extensions.swift */; };
 		DCC361A62389C7F4003109CF /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361A52389C7F4003109CF /* MapDetailViewController.swift */; };
@@ -42,7 +45,6 @@
 		DCC361B0238C6EB9003109CF /* HeaderCellDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361AF238C6EB9003109CF /* HeaderCellDescriptionLabel.swift */; };
 		DCC361B2238C75C5003109CF /* InfoCellTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361B1238C75C5003109CF /* InfoCellTitleLabel.swift */; };
 		DCC361B4238C75F8003109CF /* InfoCellDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361B3238C75F8003109CF /* InfoCellDescriptionLabel.swift */; };
-		DCC361B6238C7AFE003109CF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361B5238C7AFE003109CF /* UIImageExtension.swift */; };
 		DCC361B8238C8774003109CF /* ScheduleCellTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361B7238C8774003109CF /* ScheduleCellTitleLabel.swift */; };
 		DCC361BA238C8C53003109CF /* ScheduleCellNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361B9238C8C53003109CF /* ScheduleCellNameLabel.swift */; };
 		DCC361BC238C8DED003109CF /* ScheduleCellTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC361BB238C8DED003109CF /* ScheduleCellTimeLabel.swift */; };
@@ -68,7 +70,6 @@
 		DCC36219238E1253003109CF /* gRPC-Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC36206238E1253003109CF /* gRPC-Core.framework */; };
 		DCC3621A238E1253003109CF /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC36207238E1253003109CF /* GoogleDataTransport.framework */; };
 		DCC3621D238E1277003109CF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC3621C238E126D003109CF /* libc++.tbd */; };
-		DCC36220238E128C003109CF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC3621F238E128C003109CF /* StoreKit.framework */; };
 		DCC36221238E1295003109CF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC3621E238E1284003109CF /* libsqlite3.tbd */; };
 		DCC36223238E12E7003109CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCC36222238E12E7003109CF /* GoogleService-Info.plist */; };
 		DCC36225238E1339003109CF /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DCC36224238E1338003109CF /* gRPCCertificates-Cpp.bundle */; };
@@ -87,6 +88,7 @@
 		DCE44C4122FCACA7006E5D7D /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE44C4022FCACA7006E5D7D /* Floor.swift */; };
 		DCEEF213237632B2005F3EE7 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEF212237632B2005F3EE7 /* TitleCollectionViewCell.swift */; };
 		DCEEF21523763C7F005F3EE7 /* WorkshopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEEF21423763C7F005F3EE7 /* WorkshopCollectionViewCell.swift */; };
+		DCFFB7B9238EFC4700E98A36 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFFB7B8238EFC4700E98A36 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +119,9 @@
 		DCB9651E237B1CDC00DC8D17 /* FloorMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorMapCollectionViewCell.swift; sourceTree = "<group>"; };
 		DCB96522237B1D7D00DC8D17 /* MapHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		DCB96524237B237A00DC8D17 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapsViewController.swift; path = Views/MapsViewController.swift; sourceTree = "<group>"; };
+		DCC2DF60238E89C10047B703 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		DCC2DF62238E8BBD0047B703 /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
+		DCC2DF64238E913E0047B703 /* ProfileDropDowns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDropDowns.swift; sourceTree = "<group>"; };
 		DCC361A02389C349003109CF /* WorkshopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopDetailViewController.swift; sourceTree = "<group>"; };
 		DCC361A32389C439003109CF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DCC361A52389C7F4003109CF /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +130,6 @@
 		DCC361AF238C6EB9003109CF /* HeaderCellDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellDescriptionLabel.swift; sourceTree = "<group>"; };
 		DCC361B1238C75C5003109CF /* InfoCellTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellTitleLabel.swift; sourceTree = "<group>"; };
 		DCC361B3238C75F8003109CF /* InfoCellDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellDescriptionLabel.swift; sourceTree = "<group>"; };
-		DCC361B5238C7AFE003109CF /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		DCC361B7238C8774003109CF /* ScheduleCellTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellTitleLabel.swift; sourceTree = "<group>"; };
 		DCC361B9238C8C53003109CF /* ScheduleCellNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellNameLabel.swift; sourceTree = "<group>"; };
 		DCC361BB238C8DED003109CF /* ScheduleCellTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellTimeLabel.swift; sourceTree = "<group>"; };
@@ -153,7 +157,6 @@
 		DCC36207238E1253003109CF /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		DCC3621C238E126D003109CF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		DCC3621E238E1284003109CF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		DCC3621F238E128C003109CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		DCC36222238E12E7003109CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DCC36224238E1338003109CF /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		DCC36226238E145D003109CF /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		DCE44C4022FCACA7006E5D7D /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		DCEEF212237632B2005F3EE7 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		DCEEF21423763C7F005F3EE7 /* WorkshopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopCollectionViewCell.swift; sourceTree = "<group>"; };
+		DCFFB7B8238EFC4700E98A36 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +191,6 @@
 				DCC3621D238E1277003109CF /* libc++.tbd in Frameworks */,
 				DCC36211238E1253003109CF /* FIRAnalyticsConnector.framework in Frameworks */,
 				DCC3620B238E1253003109CF /* nanopb.framework in Frameworks */,
-				DCC36220238E128C003109CF /* StoreKit.framework in Frameworks */,
 				DCC36227238E145D003109CF /* abseil.framework in Frameworks */,
 				DCC36215238E1253003109CF /* GoogleUtilities.framework in Frameworks */,
 				DCC36221238E1295003109CF /* libsqlite3.tbd in Frameworks */,
@@ -202,6 +205,7 @@
 				DCC36217238E1253003109CF /* GoogleAppMeasurement.framework in Frameworks */,
 				DCC36213238E1253003109CF /* FirebaseStorage.framework in Frameworks */,
 				DCC36218238E1253003109CF /* GoogleDataTransportCCTSupport.framework in Frameworks */,
+				DCFFB7B9238EFC4700E98A36 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +228,9 @@
 				DC961BCD238E695000D3B704 /* ScheduleCellRoomLabel.swift */,
 				DC961BCF238E72BF00D3B704 /* ScheduleInfoButtons.swift */,
 				DC961BD1238E753B00D3B704 /* ScheduleInfoButton2.swift */,
+				DCC2DF60238E89C10047B703 /* ProfileHeader.swift */,
+				DCC2DF62238E8BBD0047B703 /* ProfileTextField.swift */,
+				DCC2DF64238E913E0047B703 /* ProfileDropDowns.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -330,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				DCC361A32389C439003109CF /* Extensions.swift */,
-				DCC361B5238C7AFE003109CF /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,7 +344,7 @@
 		DCC3621B238E126D003109CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DCC3621F238E128C003109CF /* StoreKit.framework */,
+				DCFFB7B8238EFC4700E98A36 /* StoreKit.framework */,
 				DCC3621E238E1284003109CF /* libsqlite3.tbd */,
 				DCC3621C238E126D003109CF /* libc++.tbd */,
 			);
@@ -538,9 +544,12 @@
 				DC9D6221237336A0002ED714 /* WorkshopController.swift in Sources */,
 				DC707C642384A2B500D2AEE6 /* WorkshopHeaderCollectionViewCell.swift in Sources */,
 				DCC361AE238C6DE7003109CF /* HeaderCellTitleLabel.swift in Sources */,
+				DCC2DF65238E913E0047B703 /* ProfileDropDowns.swift in Sources */,
 				DC76947B2331371B005709C8 /* SmallDetailCollectionViewCell.swift in Sources */,
+				DCC2DF61238E89C10047B703 /* ProfileHeader.swift in Sources */,
 				DC9D621F23733007002ED714 /* UserController.swift in Sources */,
 				DCB96523237B1D7D00DC8D17 /* MapHeaderCollectionViewCell.swift in Sources */,
+				DCC2DF63238E8BBD0047B703 /* ProfileTextField.swift in Sources */,
 				DCC361A42389C439003109CF /* Extensions.swift in Sources */,
 				DCC361B8238C8774003109CF /* ScheduleCellTitleLabel.swift in Sources */,
 				DC655447238261D0008E7EBE /* FloorDetailViewController.swift in Sources */,
@@ -562,7 +571,6 @@
 				DCB96525237B237A00DC8D17 /* MapsViewController.swift in Sources */,
 				DCC361BC238C8DED003109CF /* ScheduleCellTimeLabel.swift in Sources */,
 				DC7A42592374E1A9009CF094 /* NoWorkshopCollectionViewCell.swift in Sources */,
-				DCC361B6238C7AFE003109CF /* UIImageExtension.swift in Sources */,
 				DC961BCE238E695000D3B704 /* ScheduleCellRoomLabel.swift in Sources */,
 				DCE44C3B22FCAC93006E5D7D /* Workshop.swift in Sources */,
 				DCC361A62389C7F4003109CF /* MapDetailViewController.swift in Sources */,
@@ -720,7 +728,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DT6NQCY8FM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -731,12 +741,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KadenDevMountain.EncircleWinterSummit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -746,7 +758,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DT6NQCY8FM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -757,12 +771,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KadenDevMountain.EncircleWinterSummit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

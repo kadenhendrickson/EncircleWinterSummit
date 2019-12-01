@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Homepage-->
         <scene sceneID="xd3-xj-vBd">
             <objects>
                 <viewController storyboardIdentifier="homepage" id="4kt-B4-hZf" customClass="HomePageViewController" customModule="EncircleWinterSummit" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,6 +147,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VOb-JR-CaQ" firstAttribute="bottom" secondItem="595-Oj-yaa" secondAttribute="bottom" id="bbM-qp-Izz"/>
                             <constraint firstItem="595-Oj-yaa" firstAttribute="width" secondItem="LZI-h6-NpF" secondAttribute="width" id="fgj-aw-m9W"/>
@@ -155,7 +156,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VOb-JR-CaQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="WMm-44-P9y"/>
+                    <tabBarItem key="tabBarItem" title="Homepage" image="home-2-64" selectedImage="home-2-64" id="WMm-44-P9y"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="595-Oj-yaa" id="kqe-ab-0MR"/>
@@ -166,4 +167,7 @@
             <point key="canvasLocation" x="79.710144927536234" y="242.41071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home-2-64" width="21.333333969116211" height="21.333333969116211"/>
+    </resources>
 </document>

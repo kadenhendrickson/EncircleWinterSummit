@@ -11,6 +11,7 @@ import UIKit
 class HomePageViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var nextUpWorkshop: Workshop?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class HomePageViewController: UIViewController {
         collectionView.delegate = self
         self.view.backgroundColor = .black
         collectionView.backgroundColor = .black
+//        determineNextWorkshop()
     
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +32,31 @@ class HomePageViewController: UIViewController {
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
         }
     }
+    
+//    func determineNextWorkshop() -> Workshop? {
+//        guard let currentUser = UserController.shared.currentUser else{return nil}
+//        let currentDate = Date()
+//
+//        switch currentUser.trackPreference{
+//        case .youth:
+//            currentUser.schedule.forEach { (workshop) in
+//                if let workshop = workshop {
+//
+//                }
+//            }
+//        case .youngAdult:
+//        case .adult:
+//        case .parent:
+//        case .educator:
+//        }
+//       }
+    
+//    func determineNextWorkshop()  -> Workshop? {
+//        guard let currentUser = UserController.shared.currentUser else {return nil}
+//        currentUser.schedule.sort { (w1, w2) -> Bool in
+//            <#code#>
+//        }
+//    }
 }
 
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {

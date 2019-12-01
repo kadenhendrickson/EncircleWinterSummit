@@ -33,7 +33,10 @@ class WorkshopListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-   
+    @IBAction func goBackButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }
 
@@ -68,9 +71,13 @@ extension WorkshopListViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: height)
         } else {
             let width = collectionView.bounds.width-40
-            return CGSize(width: width, height: width/2)
+            return CGSize(width: width, height: width/1.5)
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15.0
     }
 }
 
@@ -79,6 +86,7 @@ extension WorkshopListViewController: WorkshopCollectionViewCellDelegate {
         let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "workshopDetailVC") as? WorkshopDetailViewController else {return}
         viewController.workshop = workshop
+        viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true)
     }
     
