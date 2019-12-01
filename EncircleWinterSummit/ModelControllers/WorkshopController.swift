@@ -41,17 +41,17 @@ class WorkshopController  {
     
     //Intro and Outro Workshops
     var youthIntroAndOutroWorkshops: [Workshop] {
-        let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime , description: "", room: "Main Area", map: "opening Map")
-        let firstWorkshop = Workshop(name: "Workshop 1", title: "An Introduction to Encircle", time: youthSharedSessionTime, description: "Learn about what Encircle can offer you, eat some treats and play some games.", room: "Ankdkdy", map: "Adobe-1")
+        let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime , description: "", room: "Main Area", map: "Adobe-1")
+        let firstWorkshop = Workshop(name: "Workshop 1", title: "An Introduction to Encircle", time: youthSharedSessionTime, description: "Learn about what Encircle can offer you, eat some treats and play some games.", room: "Any", map: "Adobe-1")
         let dinner = Workshop(name: "Dinner", title: "Dinner and Show", time: dinnerSessionTime, description: "The moment you've all been waiting for!", room: "TBD", map: "opening Map")
-        let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "", room: "Main Area", map: "opening Map")
+        let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "", room: "Main Area", map: "Adobe-1")
         return [openeingSession,firstWorkshop, dinner, closingSession]
     }
     
     var adultIntroAndOutroWorkshops: [Workshop] {
-       let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime, description: "", room: "Main Area", map: "opening Map")
-          let dinner = Workshop(name: "Dinner", title: "Dinner and Show", time: dinnerSessionTime, description: "The moment you've all been waiting for!", room: "Main Area", map: "opening Map")
-          let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "", room: "TBD", map: "opening Map")
+       let openeingSession = Workshop(name: "Opening Session", title: "Opening Session", time: openingSessionTime, description: "", room: "Main Area", map: "Podium-1")
+          let dinner = Workshop(name: "Dinner", title: "Dinner and Show", time: dinnerSessionTime, description: "The moment you've all been waiting for!", room: "Main Area", map: "Podium-1")
+          let closingSession = Workshop(name: "Closing Session", title: "Closing Session", time: closingSessionTime, description: "", room: "TBD", map: "Podium-1")
           return [openeingSession, dinner, closingSession]
     }
     

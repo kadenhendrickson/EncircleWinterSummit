@@ -84,14 +84,14 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        guard let firstName = firstNameTextField.text, firstName != "First Name",
-        let lastName = lastNameTextField.text, lastName != "Last Name",
+        guard let firstName = firstNameTextField.text, firstName != "First Name*",
+        let lastName = lastNameTextField.text, lastName != "Last Name*",
             let email = emailTextField.text,
-            let age = ageTextField.text, age != "Age",
-            let sexualOrientation = sexualOrientationTextField.text, sexualOrientation != "Sexual Orientation",
-            let genderIdentity = genderIdentityTextField.text, genderIdentity != "Gender Identity",
-            let pronounString = pronounSelectorButton.titleLabel?.text, pronounString != "Pronouns",
-            let trackPreferenceString = trackPreferenceSelectorButton.titleLabel?.text, trackPreferenceString != "Track Preference" else {alertUser(withMessage: "Please fill out all of the fields!"); return}
+            let age = ageTextField.text,
+            let sexualOrientation = sexualOrientationTextField.text,
+            let genderIdentity = genderIdentityTextField.text,
+            let pronounString = pronounSelectorButton.titleLabel?.text,
+            let trackPreferenceString = trackPreferenceSelectorButton.titleLabel?.text else {alertUser(withMessage: "Please fill out all required fields!"); return}
         
         let pronoun = determinePronouns(pronounString)
         let track = determineTrackPreference(trackPreferenceString)
@@ -107,6 +107,18 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate{
     @IBAction func resignKeyboard(_ sender: Any) {
         resignTextFields()
     }
+    
+    @IBAction func skipSignUpButtonTapped(_ sender: Any) {
+        
+        UserController.shared.createUser(with: "", lastName: "", pronouns: .other, genderIdentity: "", sexualOrientation: "", trackPreference: .youngAdult, email: "", age: "")
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         let viewController = storyboard.instantiateViewController(withIdentifier: "baseTabBar")
+         UIApplication.shared.windows[0].rootViewController = viewController
+        
+    }
+    
     //helper methods
     func determinePronouns(_ sender: String) -> Pronoun {
         switch sender {
@@ -138,7 +150,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate{
             return .educator
         default:
             print("HOW IS THIS POSSIBLE")
-            return .youth
+            return .youngAdult
        
         }
     }

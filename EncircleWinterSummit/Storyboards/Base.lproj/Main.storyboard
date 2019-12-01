@@ -83,13 +83,13 @@
                                     <action selector="signUpButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="eAy-CT-q6c"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3I2-Vk-UVD" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name*" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3I2-Vk-UVD" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
                                 <rect key="frame" x="52" y="232" width="310.5" height="34"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-CB-Y7b" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name*" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-CB-Y7b" customClass="ProfileTextField" customModule="EncircleWinterSummit" customModuleProvider="target">
                                 <rect key="frame" x="52" y="291" width="310.5" height="34"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -298,6 +298,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortDownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="mpm-ip-2Hk">
                                 <rect key="frame" x="322.5" y="631" width="17.5" height="17.5"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text fields marked with an * are required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ww-Y3-h0K">
+                                <rect key="frame" x="52" y="198" width="248" height="21"/>
+                                <fontDescription key="fontDescription" name="FuturaBT-Book" family="Futura" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPo-hD-pMN">
+                                <rect key="frame" x="163" y="778" width="88" height="30"/>
+                                <state key="normal" title="Skip sign up ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipSignUpButtonTapped:" destination="8hW-sY-FwF" eventType="touchUpInside" id="4hH-em-eyq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -310,6 +325,7 @@
                             <constraint firstItem="DUc-Tx-Amc" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.81" id="9OY-ao-RRj"/>
                             <constraint firstItem="6Of-iE-Ur1" firstAttribute="height" secondItem="YY2-CB-Y7b" secondAttribute="height" multiplier="0.05" id="AM5-KX-KFe"/>
                             <constraint firstItem="DUc-Tx-Amc" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="BTa-HF-5WH"/>
+                            <constraint firstItem="9Ww-Y3-h0K" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.46" id="CHU-GW-yiN"/>
                             <constraint firstItem="YY2-CB-Y7b" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.68" id="Crx-Dw-vYt"/>
                             <constraint firstItem="Jd0-g8-cQl" firstAttribute="width" secondItem="dKZ-5M-QBE" secondAttribute="width" id="DRx-2Z-8ct"/>
                             <constraint firstItem="dKZ-5M-QBE" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.94" id="FDE-dZ-UeX"/>
@@ -318,6 +334,7 @@
                             <constraint firstItem="3Ed-ix-K0i" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="GKt-Ni-cnp"/>
                             <constraint firstItem="mpm-ip-2Hk" firstAttribute="width" secondItem="mpm-ip-2Hk" secondAttribute="height" multiplier="1:1" id="GxN-Cc-0d0"/>
                             <constraint firstItem="UGP-Le-xeA" firstAttribute="centerY" secondItem="DUc-Tx-Amc" secondAttribute="centerY" multiplier="1.05" id="I3n-C9-e5u"/>
+                            <constraint firstItem="9Ww-Y3-h0K" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" multiplier="0.85" id="JL2-AD-osj"/>
                             <constraint firstItem="bpf-Yk-3aG" firstAttribute="centerX" secondItem="Ggg-pn-Or8" secondAttribute="centerX" id="KvS-it-U2S"/>
                             <constraint firstItem="3I2-Vk-UVD" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0379464" id="LKV-Xt-C7e"/>
                             <constraint firstItem="x9B-3f-OEz" firstAttribute="width" secondItem="3I2-Vk-UVD" secondAttribute="width" id="Mxr-Dx-Tmg"/>
@@ -325,6 +342,7 @@
                             <constraint firstItem="6Of-iE-Ur1" firstAttribute="width" secondItem="YY2-CB-Y7b" secondAttribute="width" id="NGY-ET-3YS"/>
                             <constraint firstItem="chi-3P-mJU" firstAttribute="top" secondItem="Ggg-pn-Or8" secondAttribute="bottom" constant="20" id="Nsu-sE-qbu"/>
                             <constraint firstItem="UGP-Le-xeA" firstAttribute="centerX" secondItem="DUc-Tx-Amc" secondAttribute="centerX" id="OiW-XQ-XPY"/>
+                            <constraint firstItem="BPo-hD-pMN" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0334821" id="Osa-rf-Mq1"/>
                             <constraint firstItem="chi-3P-mJU" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="PQX-He-TEc"/>
                             <constraint firstItem="x9B-3f-OEz" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="QI0-RJ-FGc"/>
                             <constraint firstItem="Z5F-pL-tob" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="0.4" id="Qka-cB-ZmO"/>
@@ -346,16 +364,19 @@
                             <constraint firstItem="dKZ-5M-QBE" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="YpW-rC-O01"/>
                             <constraint firstItem="mpm-ip-2Hk" firstAttribute="centerY" secondItem="ePa-jr-cRh" secondAttribute="centerY" id="aoH-AH-HTq"/>
                             <constraint firstItem="Vt0-YV-HBX" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.6" id="bBI-Kz-RYK"/>
+                            <constraint firstItem="BPo-hD-pMN" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="cl0-q8-zPN"/>
                             <constraint firstItem="a3u-s8-e76" firstAttribute="centerX" secondItem="Zdh-kz-ybO" secondAttribute="centerX" id="csK-EL-8Uz"/>
                             <constraint firstItem="Zdh-kz-ybO" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.06" id="d10-pS-exs"/>
                             <constraint firstItem="Jd0-g8-cQl" firstAttribute="centerX" secondItem="dKZ-5M-QBE" secondAttribute="centerX" id="dcr-vr-QgV"/>
                             <constraint firstItem="bpf-Yk-3aG" firstAttribute="centerY" secondItem="Ggg-pn-Or8" secondAttribute="centerY" multiplier="1.04" id="ewi-pZ-tgP"/>
                             <constraint firstItem="X7d-Pt-DLJ" firstAttribute="height" secondItem="Qjb-EZ-cZU" secondAttribute="height" multiplier="0.5" id="gkc-k8-Kk3"/>
+                            <constraint firstItem="9Ww-Y3-h0K" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0234375" id="h1V-mH-kOG"/>
                             <constraint firstItem="Zdh-kz-ybO" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="hKD-Rg-tU8"/>
                             <constraint firstItem="a3u-s8-e76" firstAttribute="height" secondItem="Zdh-kz-ybO" secondAttribute="height" multiplier="0.05" id="hW5-6m-uqR"/>
                             <constraint firstItem="Ggg-pn-Or8" firstAttribute="height" secondItem="dKZ-5M-QBE" secondAttribute="height" id="hYt-yQ-Cie"/>
                             <constraint firstItem="Vt0-YV-HBX" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.478261" id="iXb-vG-3IZ"/>
                             <constraint firstItem="x9B-3f-OEz" firstAttribute="centerY" secondItem="3I2-Vk-UVD" secondAttribute="centerY" multiplier="1.07" id="iad-nD-2PP"/>
+                            <constraint firstItem="BPo-hD-pMN" firstAttribute="centerY" secondItem="QNT-t9-j3d" secondAttribute="centerY" multiplier="1.75" id="mdQ-sl-Dz7"/>
                             <constraint firstItem="a3u-s8-e76" firstAttribute="width" secondItem="Zdh-kz-ybO" secondAttribute="width" id="nSj-hG-gWv"/>
                             <constraint firstItem="DUc-Tx-Amc" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0379464" id="okR-Jj-q7J"/>
                             <constraint firstItem="6Of-iE-Ur1" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="pJU-2C-cpK"/>
@@ -363,6 +384,7 @@
                             <constraint firstItem="mpm-ip-2Hk" firstAttribute="centerX" secondItem="ePa-jr-cRh" secondAttribute="centerX" multiplier="1.8" id="rEf-ut-I7U"/>
                             <constraint firstItem="chi-3P-mJU" firstAttribute="centerX" secondItem="QNT-t9-j3d" secondAttribute="centerX" id="taU-XP-itN"/>
                             <constraint firstItem="Vt0-YV-HBX" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0334821" id="tns-Lf-JlK"/>
+                            <constraint firstItem="9Ww-Y3-h0K" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.6" id="trg-io-3AP"/>
                             <constraint firstItem="dKZ-5M-QBE" firstAttribute="height" secondItem="Tkc-MF-Hrd" secondAttribute="height" multiplier="0.0379464" id="uwB-P2-Li2"/>
                             <constraint firstItem="3I2-Vk-UVD" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="vP4-fx-MPG"/>
                             <constraint firstItem="qyT-D7-SXs" firstAttribute="width" secondItem="Tkc-MF-Hrd" secondAttribute="width" multiplier="0.75" id="vnf-Ra-EWq"/>
